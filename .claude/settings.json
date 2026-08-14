@@ -35,7 +35,8 @@
       "Bash(python3 -c \"from PIL import Image; print\\('ok'\\)\")",
       "Bash(python -c \"from PIL import Image; print\\('ok'\\)\")",
       "Bash(python -c ' *)",
-      "Bash(curl -sL -A Mozilla/5.0 https://upload.wikimedia.org/wikipedia/commons/6/68/Toyota_Innova_Crysta.jpg -o /c/Users/krtan/AppData/Local/Temp/claude/c--Users-krtan-Downloads-Copy-of-Files-in-folder-review/e600aec9-3ee2-4948-a2ed-4b2189c1cca3/scratchpad/innova2.jpg)"
+      "Bash(curl -sL -A Mozilla/5.0 https://upload.wikimedia.org/wikipedia/commons/6/68/Toyota_Innova_Crysta.jpg -o /c/Users/krtan/AppData/Local/Temp/claude/c--Users-krtan-Downloads-Copy-of-Files-in-folder-review/e600aec9-3ee2-4948-a2ed-4b2189c1cca3/scratchpad/innova2.jpg)",
+      "Bash(perl -0pi -e 's/<div style=\"display:flex;align-items:center;gap:10px;flex-shrink:0\">/<div data-navbar-mid style=\"display:flex;align-items:center;justify-content:center;gap:10px;flex-shrink:0\">/' \"Satya Tourists Contact.dc.html\")"
     ]
   }
 }
