@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;color:#17181A;background:#fff;-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  a:hover{color:#E0570A;}
+
+  @media (max-width:960px){
+    [data-desktop-nav]{display:none !important;}
+    [data-navbar]{gap:10px !important;padding:10px 16px !important;}
+  }
+  @media (min-width:961px){
+    [data-mobile-only]{display:none !important;}
+  }
+  @media (max-width:560px){
+    [data-phone-text]{display:none !important;}
+    [data-footer-bottom]{flex-direction:column !important;text-align:center !important;justify-content:center !important;}
+  }
+</style>
+</helmet>
+
+<div style="width:100%;background:#fff">
+
+<svg style="display:none" aria-hidden="true">
+  <defs>
+    <symbol id="icon-sedan" viewBox="0 0 240 110">
+      <rect x="14" y="70" width="212" height="5" rx="2" fill="#F4711E"></rect>
+      <path d="M22 82 Q20 58 48 52 L74 33 Q94 24 122 24 L160 24 Q186 27 202 52 L212 56 Q224 60 224 72 L224 82 Q224 88 217 88 L27 88 Q22 88 22 82 Z" fill="#1E2126"></path>
+      <rect x="72" y="34" width="90" height="20" rx="5" fill="#E8EEF3"></rect>
+      <line x1="117" y1="34" x2="117" y2="54" stroke="#1E2126" stroke-width="3"></line>
+      <circle cx="66" cy="88" r="15" fill="#1E2126"></circle>
+      <circle cx="66" cy="88" r="6.5" fill="#E8EEF3"></circle>
+      <circle cx="180" cy="88" r="15" fill="#1E2126"></circle>
+      <circle cx="180" cy="88" r="6.5" fill="#E8EEF3"></circle>
+    </symbol>
+    <symbol id="icon-hatch" viewBox="0 0 240 110">
+      <rect x="18" y="70" width="204" height="5" rx="2" fill="#F4711E"></rect>
+      <path d="M30 82 Q28 58 54 52 L78 32 Q96 24 126 24 L154 24 Q178 28 192 52 L204 58 Q216 64 216 74 L216 82 Q216 88 209 88 L35 88 Q30 88 30 82 Z" fill="#1E2126"></path>
+      <rect x="78" y="33" width="72" height="20" rx="5" fill="#E8EEF3"></rect>
+      <line x1="116" y1="33" x2="116" y2="53" stroke="#1E2126" stroke-width="3"></line>
+      <circle cx="72" cy="88" r="15" fill="#1E2126"></circle>
+      <circle cx="72" cy="88" r="6.5" fill="#E8EEF3"></circle>
+      <circle cx="174" cy="88" r="15" fill="#1E2126"></circle>
+      <circle cx="174" cy="88" r="6.5" fill="#E8EEF3"></circle>
+    </symbol>
+    <symbol id="icon-suv" viewBox="0 0 240 110">
+      <rect x="12" y="72" width="216" height="5" rx="2" fill="#F4711E"></rect>
+      <path d="M20 84 Q18 52 44 46 L62 28 Q80 20 120 20 L168 20 Q192 22 206 46 L216 50 Q226 55 226 70 L226 84 Q226 90 219 90 L25 90 Q20 90 20 84 Z" fill="#1E2126"></path>
+      <rect x="60" y="29" width="106" height="24" rx="5" fill="#E8EEF3"></rect>
+      <line x1="113" y1="29" x2="113" y2="53" stroke="#1E2126" stroke-width="3"></line>
+      <circle cx="64" cy="90" r="16" fill="#1E2126"></circle>
+      <circle cx="64" cy="90" r="7" fill="#E8EEF3"></circle>
+      <circle cx="184" cy="90" r="16" fill="#1E2126"></circle>
+      <circle cx="184" cy="90" r="7" fill="#E8EEF3"></circle>
+    </symbol>
+    <symbol id="icon-mpv" viewBox="0 0 240 110">
+      <rect x="10" y="74" width="220" height="5" rx="2" fill="#F4711E"></rect>
+      <path d="M18 86 Q16 46 42 40 L50 26 Q64 16 120 16 L172 16 Q198 18 210 40 L218 44 Q228 50 228 68 L228 86 Q228 92 221 92 L23 92 Q18 92 18 86 Z" fill="#1E2126"></path>
+      <rect x="50" y="26" width="128" height="28" rx="5" fill="#E8EEF3"></rect>
+      <line x1="94" y1="26" x2="94" y2="54" stroke="#1E2126" stroke-width="3"></line>
+      <line x1="140" y1="26" x2="140" y2="54" stroke="#1E2126" stroke-width="3"></line>
+      <circle cx="62" cy="92" r="16" fill="#1E2126"></circle>
+      <circle cx="62" cy="92" r="7" fill="#E8EEF3"></circle>
+      <circle cx="186" cy="92" r="16" fill="#1E2126"></circle>
+      <circle cx="186" cy="92" r="7" fill="#E8EEF3"></circle>
+    </symbol>
+  </defs>
+</svg>
+
+<header data-screen-label="Nav" style="position:sticky;top:0;z-index:50;background:#EAF4FF;border-bottom:2px solid #17181A">
+  <div data-navbar style="max-width:1526px;margin:0 auto;display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.6vw,28px);padding:clamp(10px,1.4vw,14px) clamp(16px,2.2vw,32px)">
+    <a href="index.html" style="flex-shrink:0"><img src="images/logo-nav.png" alt="Satya Tourists Bengaluru logo" style="height:clamp(34px,3.2vw,46px);display:block"></a>
+    <div style="display:flex;align-items:center;gap:12px;flex-shrink:0">
+      <a href="tel:+919000000000" style="padding:clamp(8px,1vw,11px) clamp(14px,1.6vw,22px);border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(12px,1vw,14px);box-shadow:0 8px 16px rgba(224,87,10,0.28);white-space:nowrap" style-hover="filter:brightness(1.06)">Book Now</a>
+      <a href="tel:+919000000000" style="display:flex;align-items:center;gap:8px;padding:clamp(8px,1vw,11px) clamp(12px,1.4vw,20px);border-radius:8px;background:#17181A;color:#fff;font-weight:700;font-size:clamp(12px,1vw,14px);white-space:nowrap" style-hover="filter:brightness(1.2)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h2l2 5-2 1a11 11 0 006 6l1-2 5 2v2a2 2 0 01-2 2A16 16 0 013 5z"></path></svg>
+        <span data-phone-text>+91-90000 00000</span>
+      </a>
+    </div>
+    <nav data-desktop-nav style="display:flex;align-items:center;gap:clamp(12px,1.7vw,28px);flex-wrap:wrap;margin-left:auto;font-family:'Poppins',sans-serif;font-size:clamp(12.5px,1.05vw,15px);font-weight:700">
+      <a href="index.html" style="color:#17181A;padding:6px 2px;border-bottom:2px solid transparent" style-hover="color:#E0570A">Home</a>
+      <a href="Satya%20Tourists%20Outstation.dc.html" style="color:#17181A;padding:6px 2px;border-bottom:2px solid transparent" style-hover="color:#E0570A">Outstation Taxi</a>
+      <a href="Satya%20Tourists%20Airport%20Taxi.dc.html" style="color:#17181A;padding:6px 2px;border-bottom:2px solid transparent" style-hover="color:#E0570A">Airport Taxi</a>
+      <a href="#top" style="color:#E0570A;padding:6px 2px;border-bottom:2px solid #F4711E">Local Taxi</a>
+      <a href="Satya%20Tourists%20Corporate%20Cabs.dc.html" style="color:#17181A;padding:6px 2px;border-bottom:2px solid transparent" style-hover="color:#E0570A">Corporate Cabs</a>
+      <a href="Satya%20Tourists%20Our%20Fleet.dc.html" style="color:#17181A;padding:6px 2px;border-bottom:2px solid transparent" style-hover="color:#E0570A">Our Fleet</a>
+      <a href="Satya%20Tourists%20Contact.dc.html" style="color:#17181A;padding:6px 2px;border-bottom:2px solid transparent" style-hover="color:#E0570A">Contact</a>
+    </nav>
+    <button data-mobile-only onClick="{{ toggleNav }}" aria-label="Menu" style="margin-left:auto;width:42px;height:42px;border-radius:10px;background:#fff;border:1px solid #cfe0f3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer">
+      <span style="display:block;width:20px;height:2.5px;background:#17181A;border-radius:2px"></span>
+      <span style="display:block;width:20px;height:2.5px;background:#17181A;border-radius:2px"></span>
+      <span style="display:block;width:20px;height:2.5px;background:#17181A;border-radius:2px"></span>
+    </button>
+  </div>
+  <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
+    <nav data-mobile-only style="display:flex;flex-direction:column;gap:2px;padding:6px 16px 18px;background:#EAF4FF;border-top:1px solid #cfe0f3;font-family:'Poppins',sans-serif;font-size:15px;font-weight:700">
+      <a href="index.html" style="color:#17181A;padding:12px 4px;border-bottom:1px solid #dbe8f6">Home</a>
+      <a href="Satya%20Tourists%20Outstation.dc.html" style="color:#17181A;padding:12px 4px;border-bottom:1px solid #dbe8f6">Outstation Taxi</a>
+      <a href="Satya%20Tourists%20Airport%20Taxi.dc.html" style="color:#17181A;padding:12px 4px;border-bottom:1px solid #dbe8f6">Airport Taxi</a>
+      <a href="Satya%20Tourists%20Local%20Taxi.dc.html" style="color:#17181A;padding:12px 4px;border-bottom:1px solid #dbe8f6">Local Taxi</a>
+      <a href="Satya%20Tourists%20Corporate%20Cabs.dc.html" style="color:#17181A;padding:12px 4px;border-bottom:1px solid #dbe8f6">Corporate Cabs</a>
+      <a href="Satya%20Tourists%20Our%20Fleet.dc.html" style="color:#17181A;padding:12px 4px;border-bottom:1px solid #dbe8f6">Our Fleet</a>
+      <a href="Satya%20Tourists%20Contact.dc.html" style="color:#17181A;padding:12px 4px">Contact</a>
+    </nav>
+  </sc-if>
+</header>
+
+<section id="top" data-screen-label="Page banner" style="position:relative;background:linear-gradient(180deg,rgba(15,16,20,0.72),rgba(15,16,20,0.8)),url('images/local.png');background-size:cover;background-position:center 40%;padding:clamp(56px,7vw,90px) clamp(18px,2.2vw,32px) clamp(44px,5.5vw,70px);text-align:center">
+  <h1 style="font-family:'Poppins',sans-serif;color:#fff;font-size:clamp(28px,4vw,46px);font-weight:800;margin-bottom:14px">Local Taxi Service in Bengaluru</h1>
+  <p style="color:#e9ddc8;font-size:14.5px;font-weight:600"><a href="index.html" style="color:#fff">Home</a> &nbsp;/&nbsp; Local Taxi</p>
+</section>
+
+<section data-screen-label="Local packages" style="background:linear-gradient(180deg,#EAF4FF 0%,#EFF8F1 100%);padding:clamp(44px,5.5vw,64px) clamp(18px,2.2vw,32px) clamp(48px,6vw,72px)">
+  <div style="text-align:center;max-width:760px;margin:0 auto 40px">
+    <h2 style="font-family:'Poppins',sans-serif;font-size:clamp(24px,3vw,34px);font-weight:800;color:#17181A;margin-bottom:10px">Book Local Taxi with Satya Tourists</h2>
+    <p style="color:#4B4F55;font-size:15px">Book Taxi for Local Trip with safe and secured professional taxi services offering 24 hours customer support</p>
+  </div>
+
+  <div style="max-width:1462px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:22px">
+    <sc-for list="{{ packages }}" as="p" hint-placeholder-count="4">
+      <div style="background:#fff;border-radius:16px;padding:22px 22px 24px;box-shadow:0 6px 18px rgba(20,30,50,0.07);border:1px solid #eef1f4;display:flex;flex-direction:column" style-hover="transform:translateY(-5px);box-shadow:0 16px 30px rgba(20,30,50,0.12)">
+        <div style="text-align:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;color:#17181A">{{ p.name }}</div>
+        <div style="text-align:center;font-size:12.5px;color:#E0570A;font-weight:600;margin-top:2px;margin-bottom:14px">Local Taxi</div>
+        <div style="height:84px;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+          <svg style="height:100%;width:auto"><use href="{{ p.icon }}"></use></svg>
+        </div>
+        <dl style="font-size:13.5px;display:grid;grid-template-columns:auto 1fr;row-gap:7px;column-gap:10px;margin-bottom:14px">
+          <dt style="font-weight:700;color:#17181A">Tariff</dt><dd style="text-align:right;font-weight:700;color:#14602F">{{ p.tariff }}</dd>
+          <dt style="color:#4B4F55">Included</dt><dd style="text-align:right;color:#4B4F55">{{ p.included }}</dd>
+          <dt style="color:#4B4F55">Extra Km</dt><dd style="text-align:right;color:#4B4F55">{{ p.extraKm }}</dd>
+          <dt style="color:#4B4F55">Extra hour</dt><dd style="text-align:right;color:#4B4F55">{{ p.extraHour }}</dd>
+          <dt style="color:#4B4F55">Seating</dt><dd style="text-align:right;color:#4B4F55">{{ p.seats }}</dd>
+        </dl>
+        <div style="display:flex;align-items:flex-start;gap:6px;font-size:12px;color:#8a6d1f;background:#FFF7E6;border-radius:8px;padding:6px 8px;margin-bottom:14px">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4M12 16h.01"></path></svg>Toll and parking charges extra
+        </div>
+        <div style="display:flex;gap:8px;margin-top:auto">
+          <a href="#book" style="flex:1;text-align:center;padding:10px 8px;border-radius:9px;font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:600;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;box-shadow:0 8px 16px rgba(224,87,10,0.28)" style-hover="transform:translateY(-2px)">Book Online</a>
+          <a href="https://wa.me/919000000000" target="_blank" rel="noopener" style="flex:1;padding:10px 8px;border-radius:9px;font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:600;background:#17181A;color:#fff;display:flex;align-items:center;justify-content:center;gap:6px" style-hover="transform:translateY(-2px)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.06L2 22l5.1-1.34A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.3 1.18-1.78 1.24-.46.06-.92.1-1.94-.24-3.36-1.34-5.56-4.6-5.72-4.82-.16-.22-1.34-1.78-1.34-3.4 0-1.62.84-2.4 1.14-2.72.3-.32.66-.4.88-.4h.62c.2 0 .48-.02.7.54.24.6.82 2.06.9 2.2.08.14.14.32.02.5-.12.2-.2.32-.36.5-.16.18-.34.4-.48.54-.16.16-.34.34-.16.66.18.32.82 1.36 1.76 2.2 1.2 1.08 2.22 1.42 2.56 1.58.34.16.54.14.74-.08.2-.22.86-1 1.1-1.34.24-.34.48-.28.8-.16.32.12 2.02.96 2.36 1.14.34.18.56.26.64.4.08.14.08.82-.14 1.44z"></path></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="Why local" style="background:#EAF4FF;padding:clamp(44px,5.5vw,64px) clamp(18px,2.2vw,32px) clamp(46px,5.8vw,70px)">
+  <div style="max-width:1100px;margin:0 auto">
+    <h2 style="font-family:'Poppins',sans-serif;font-size:clamp(24px,3.2vw,34px);font-weight:800;color:#17181A;line-height:1.3;margin-bottom:18px;max-width:820px">Why book your city trips with Satya Tourists</h2>
+    <p style="color:#4B4F55;font-size:15px;line-height:1.7;max-width:820px;margin-bottom:36px">Hourly packages for shopping, meetings, temple visits, and family outings across Bengaluru &mdash; with clear inclusions and no hidden charges.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px">
+      <sc-for list="{{ reasons }}" as="b" hint-placeholder-count="4">
+        <div style="background:#fff;border-radius:14px;padding:22px 20px;display:flex;align-items:center;gap:16px;box-shadow:0 6px 18px rgba(20,30,50,0.07)">
+          <div style="flex-shrink:0;width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:#F6F1E8">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#E0570A" stroke-width="1.8" style="width:26px;height:26px"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>
+          </div>
+          <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:#17181A;line-height:1.35">{{ b }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Final CTA" style="position:relative;background:radial-gradient(ellipse 700px 400px at 12% 10%,rgba(244,113,30,0.22),transparent 60%),radial-gradient(ellipse 700px 400px at 88% 100%,rgba(30,132,73,0.28),transparent 60%),linear-gradient(180deg,#14151A 0%,#1B1D22 100%);padding:clamp(56px,7vw,80px) clamp(18px,2.2vw,32px);text-align:center">
+  <div style="max-width:920px;margin:0 auto">
+    <h2 style="font-family:'Poppins',sans-serif;color:#fff;font-size:clamp(24px,3.6vw,38px);font-weight:800;line-height:1.35;margin-bottom:22px">Need a cab within the city today?</h2>
+    <p style="color:#c7cad0;font-size:15.5px;line-height:1.7;max-width:760px;margin:0 auto 26px">Tell us your pick-up point and hours needed &mdash; we'll send a clean vehicle with a verified driver, on time.</p>
+    <div style="display:inline-flex;align-items:center;gap:10px;color:#fff;font-size:clamp(17px,1.8vw,20px);font-weight:600;margin-bottom:22px">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F4711E" stroke-width="2"><path d="M3 5a2 2 0 012-2h2l2 5-2 1a11 11 0 006 6l1-2 5 2v2a2 2 0 01-2 2A16 16 0 013 5z"></path></svg>
+      Call Now <a href="tel:+919000000000" style="color:#fff">+91-90000 00000</a>
+    </div>
+    <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
+      <a href="#book" style="padding:12px 26px;border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-weight:600;font-size:14.5px;box-shadow:0 8px 18px rgba(224,87,10,0.3)" style-hover="transform:translateY(-2px)">Book Local Taxi</a>
+      <a href="Satya%20Tourists%20Our%20Fleet.dc.html" style="padding:12px 26px;border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-weight:600;font-size:14.5px;box-shadow:0 8px 18px rgba(224,87,10,0.3)" style-hover="transform:translateY(-2px)">View Our Fleet</a>
+    </div>
+  </div>
+</section>
+
+<footer id="contact" data-screen-label="Footer" style="position:relative;background:linear-gradient(180deg,#121317 0%,#0C0D10 100%);color:#b9bdc6">
+  <div style="height:3px;background:linear-gradient(90deg,#F4711E,#FFC72C 45%,#1E8449)"></div>
+
+  <div style="max-width:1400px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(18px,2.2vw,32px) clamp(28px,3vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:clamp(26px,3vw,44px)">
+
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="display:inline-flex;align-self:flex-start;background:#fff;border-radius:12px;padding:10px 16px">
+        <img src="images/logo.png" alt="Satya Tourists Bengaluru logo" style="height:40px;display:block">
+      </div>
+      <p style="font-size:14px;line-height:1.75;color:#9ba0a9;max-width:320px">Outstation, airport, local and corporate travel across Bengaluru and South India &mdash; verified drivers, inspected vehicles, and fares agreed up front.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <a href="tel:+919000000000" style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:9px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;box-shadow:0 8px 18px rgba(224,87,10,0.28)" style-hover="transform:translateY(-2px)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h2l2 5-2 1a11 11 0 006 6l1-2 5 2v2a2 2 0 01-2 2A16 16 0 013 5z"></path></svg>
+          Call Now
+        </a>
+        <a href="https://wa.me/919000000000" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:9px;background:#1E8449;color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:13px" style-hover="transform:translateY(-2px)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.06L2 22l5.1-1.34A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.3 1.18-1.78 1.24-.46.06-.92.1-1.94-.24-3.36-1.34-5.56-4.6-5.72-4.82-.16-.22-1.34-1.78-1.34-3.4 0-1.62.84-2.4 1.14-2.72.3-.32.66-.4.88-.4h.62c.2 0 .48-.02.7.54.24.6.82 2.06.9 2.2.08.14.14.32.02.5-.12.2-.2.32-.36.5-.16.18-.34.4-.48.54-.16.16-.34.34-.16.66.18.32.82 1.36 1.76 2.2 1.2 1.08 2.22 1.42 2.56 1.58.34.16.54.14.74-.08.2-.22.86-1 1.1-1.34.24-.34.48-.28.8-.16.32.12 2.02.96 2.36 1.14.34.18.56.26.64.4.08.14.08.82-.14 1.44z"></path></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <h3 style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:#fff;letter-spacing:0.02em">Services</h3>
+      <nav style="display:flex;flex-direction:column;gap:11px;font-size:14px">
+        <a href="Satya%20Tourists%20Outstation.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Outstation Taxi</a>
+        <a href="Satya%20Tourists%20Airport%20Taxi.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Airport Taxi</a>
+        <a href="Satya%20Tourists%20Local%20Taxi.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Local Taxi</a>
+        <a href="Satya%20Tourists%20Corporate%20Cabs.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Corporate Cabs</a>
+        <a href="Satya%20Tourists%20Our%20Fleet.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Tempo Traveller &amp; Bus Hire</a>
+        <a href="Satya%20Tourists%20Our%20Fleet.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Our Fleet</a>
+      </nav>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <h3 style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:#fff;letter-spacing:0.02em">Popular routes</h3>
+      <nav style="display:flex;flex-direction:column;gap:11px;font-size:14px">
+        <a href="Satya%20Tourists%20Outstation.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Bengaluru to Mysore</a>
+        <a href="Satya%20Tourists%20Outstation.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Bengaluru to Coorg</a>
+        <a href="Satya%20Tourists%20Outstation.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Bengaluru to Ooty</a>
+        <a href="Satya%20Tourists%20Outstation.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Bengaluru to Tirupati</a>
+        <a href="Satya%20Tourists%20Outstation.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Bengaluru to Chennai</a>
+        <a href="Satya%20Tourists%20Outstation.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Bengaluru to Goa</a>
+      </nav>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <h3 style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:#fff;letter-spacing:0.02em">Reach us</h3>
+      <a href="tel:+919000000000" style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#fff;font-weight:600" style-hover="color:#F4711E">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F4711E" stroke-width="2" style="flex-shrink:0;margin-top:2px"><path d="M3 5a2 2 0 012-2h2l2 5-2 1a11 11 0 006 6l1-2 5 2v2a2 2 0 01-2 2A16 16 0 013 5z"></path></svg>
+        +91-90000 00000
+      </a>
+      <a href="mailto:info@satyatourists.in" style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#fff;font-weight:600" style-hover="color:#F4711E">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F4711E" stroke-width="2" style="flex-shrink:0;margin-top:2px"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+        info@satyatourists.in
+      </a>
+      <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.7;color:#9ba0a9">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F4711E" stroke-width="2" style="flex-shrink:0;margin-top:3px"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+        Bengaluru, Karnataka, India
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#9ba0a9">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F4711E" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>
+        Bookings open 24 x 7
+      </div>
+      <a href="Satya%20Tourists%20Contact.dc.html" style="align-self:flex-start;margin-top:4px;padding:10px 18px;border-radius:9px;border:1px solid #33363d;color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:13px" style-hover="border-color:#F4711E;color:#F4711E">Contact Us</a>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #232529">
+    <div data-footer-bottom style="max-width:1400px;margin:0 auto;padding:18px clamp(18px,2.2vw,32px) 22px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;font-size:13px;color:#71757e">
+      <span>Copyright &copy; 2024 Satya Tourists. All Rights Reserved.</span>
+      <nav style="display:flex;flex-wrap:wrap;gap:clamp(12px,1.6vw,22px)">
+        <a href="index.html" style="color:#71757e" style-hover="color:#fff">Home</a>
+        <a href="Satya%20Tourists%20Contact.dc.html" style="color:#71757e" style-hover="color:#fff">Contact</a>
+        <a href="Satya%20Tourists%20Our%20Fleet.dc.html" style="color:#71757e" style-hover="color:#fff">Our Fleet</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { navOpen: false };
+  renderVals() {
+    const R = "\u20B9";
+    return {
+      navOpen: this.state.navOpen,
+      toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      packages: [
+        { name: "Sedan Cab", icon: "#icon-sedan", tariff: R + "1200.00", included: "4Hrs 40Kms", extraKm: R + "13.00 /km", extraHour: R + "150.00/hour", seats: "4+1" },
+        { name: "Hatchback AC", icon: "#icon-hatch", tariff: R + "1899.00", included: "8Hrs 80Kms", extraKm: R + "14.00 /km", extraHour: R + "140.00/hour", seats: "4+1" },
+        { name: "Ertiga SUV", icon: "#icon-suv", tariff: R + "1900.00", included: "4Hrs 40Kms", extraKm: R + "18.00 /km", extraHour: R + "200.00/hour", seats: "6+1" },
+        { name: "Toyota Innova", icon: "#icon-mpv", tariff: R + "2000.00", included: "4Hrs 40Kms", extraKm: R + "20.00 /km", extraHour: R + "200.00/hour", seats: "7+1" }
+      ],
+      reasons: [
+        "Hourly packages with clear inclusions",
+        "Verified drivers who know the city",
+        "Clean, regularly inspected vehicles",
+        "24x7 booking and support"
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

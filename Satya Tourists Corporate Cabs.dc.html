@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;color:#17181A;background:#fff;-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  a:hover{color:#E0570A;}
+
+  @media (max-width:960px){
+    [data-desktop-nav]{display:none !important;}
+    [data-navbar]{gap:10px !important;padding:10px 16px !important;}
+  }
+  @media (min-width:961px){
+    [data-mobile-only]{display:none !important;}
+  }
+  @media (max-width:560px){
+    [data-phone-text]{display:none !important;}
+    [data-footer-bottom]{flex-direction:column !important;text-align:center !important;justify-content:center !important;}
+  }
+</style>
+</helmet>
+
+<div style="width:100%;background:#fff">
+
+<header data-screen-label="Nav" style="position:sticky;top:0;z-index:50;background:#EAF4FF;border-bottom:2px solid #17181A">
+  <div data-navbar style="max-width:1526px;margin:0 auto;display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.6vw,28px);padding:clamp(10px,1.4vw,14px) clamp(16px,2.2vw,32px)">
+    <a href="index.html" style="flex-shrink:0"><img src="images/logo-nav.png" alt="Satya Tourists Bengaluru logo" style="height:clamp(34px,3.2vw,46px);display:block"></a>
+    <div style="display:flex;align-items:center;gap:12px;flex-shrink:0">
+      <a href="tel:+919000000000" style="padding:clamp(8px,1vw,11px) clamp(14px,1.6vw,22px);border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(12px,1vw,14px);box-shadow:0 8px 16px rgba(224,87,10,0.28);white-space:nowrap" style-hover="filter:brightness(1.06)">Book Now</a>
+      <a href="tel:+919000000000" style="display:flex;align-items:center;gap:8px;padding:clamp(8px,1vw,11px) clamp(12px,1.4vw,20px);border-radius:8px;background:#17181A;color:#fff;font-weight:700;font-size:clamp(12px,1vw,14px);white-space:nowrap" style-hover="filter:brightness(1.2)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h2l2 5-2 1a11 11 0 006 6l1-2 5 2v2a2 2 0 01-2 2A16 16 0 013 5z"></path></svg>
+        <span data-phone-text>+91-90000 00000</span>
+      </a>
+    </div>
+    <nav data-desktop-nav style="display:flex;align-items:center;gap:clamp(12px,1.7vw,28px);flex-wrap:wrap;margin-left:auto;font-family:'Poppins',sans-serif;font-size:clamp(12.5px,1.05vw,15px);font-weight:700">
+      <a href="index.html" style="color:#17181A;padding:6px 2px;border-bottom:2px solid transparent" style-hover="color:#E0570A">Home</a>
+      <a href="Satya%20Tourists%20Outstation.dc.html" style="color:#17181A;padding:6px 2px;border-bottom:2px solid transparent" style-hover="color:#E0570A">Outstation Taxi</a>
+      <a href="Satya%20Tourists%20Airport%20Taxi.dc.html" style="color:#17181A;padding:6px 2px;border-bottom:2px solid transparent" style-hover="color:#E0570A">Airport Taxi</a>
+      <a href="Satya%20Tourists%20Local%20Taxi.dc.html" style="color:#17181A;padding:6px 2px;border-bottom:2px solid transparent" style-hover="color:#E0570A">Local Taxi</a>
+      <a href="#top" style="color:#E0570A;padding:6px 2px;border-bottom:2px solid #F4711E">Corporate Cabs</a>
+      <a href="Satya%20Tourists%20Our%20Fleet.dc.html" style="color:#17181A;padding:6px 2px;border-bottom:2px solid transparent" style-hover="color:#E0570A">Our Fleet</a>
+      <a href="Satya%20Tourists%20Contact.dc.html" style="color:#17181A;padding:6px 2px;border-bottom:2px solid transparent" style-hover="color:#E0570A">Contact</a>
+    </nav>
+    <button data-mobile-only onClick="{{ toggleNav }}" aria-label="Menu" style="margin-left:auto;width:42px;height:42px;border-radius:10px;background:#fff;border:1px solid #cfe0f3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer">
+      <span style="display:block;width:20px;height:2.5px;background:#17181A;border-radius:2px"></span>
+      <span style="display:block;width:20px;height:2.5px;background:#17181A;border-radius:2px"></span>
+      <span style="display:block;width:20px;height:2.5px;background:#17181A;border-radius:2px"></span>
+    </button>
+  </div>
+  <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
+    <nav data-mobile-only style="display:flex;flex-direction:column;gap:2px;padding:6px 16px 18px;background:#EAF4FF;border-top:1px solid #cfe0f3;font-family:'Poppins',sans-serif;font-size:15px;font-weight:700">
+      <a href="index.html" style="color:#17181A;padding:12px 4px;border-bottom:1px solid #dbe8f6">Home</a>
+      <a href="Satya%20Tourists%20Outstation.dc.html" style="color:#17181A;padding:12px 4px;border-bottom:1px solid #dbe8f6">Outstation Taxi</a>
+      <a href="Satya%20Tourists%20Airport%20Taxi.dc.html" style="color:#17181A;padding:12px 4px;border-bottom:1px solid #dbe8f6">Airport Taxi</a>
+      <a href="Satya%20Tourists%20Local%20Taxi.dc.html" style="color:#17181A;padding:12px 4px;border-bottom:1px solid #dbe8f6">Local Taxi</a>
+      <a href="Satya%20Tourists%20Corporate%20Cabs.dc.html" style="color:#17181A;padding:12px 4px;border-bottom:1px solid #dbe8f6">Corporate Cabs</a>
+      <a href="Satya%20Tourists%20Our%20Fleet.dc.html" style="color:#17181A;padding:12px 4px;border-bottom:1px solid #dbe8f6">Our Fleet</a>
+      <a href="Satya%20Tourists%20Contact.dc.html" style="color:#17181A;padding:12px 4px">Contact</a>
+    </nav>
+  </sc-if>
+</header>
+
+<section id="top" data-screen-label="Page banner" style="position:relative;background:linear-gradient(180deg,rgba(15,16,20,0.72),rgba(15,16,20,0.8)),url('images/corporate-transport.png');background-size:cover;background-position:center 45%;padding:clamp(56px,7vw,90px) clamp(18px,2.2vw,32px) clamp(44px,5.5vw,70px);text-align:center">
+  <h1 style="font-family:'Poppins',sans-serif;color:#fff;font-size:clamp(28px,4vw,46px);font-weight:800;margin-bottom:14px">Corporate Cabs Rental</h1>
+  <p style="color:#e9ddc8;font-size:14.5px;font-weight:600"><a href="index.html" style="color:#fff">Home</a> &nbsp;/&nbsp; Corporate Cabs</p>
+</section>
+
+<section data-screen-label="Intro" style="max-width:1240px;margin:0 auto;padding:clamp(40px,5vw,60px) clamp(18px,2.2vw,32px) 10px">
+  <h2 style="font-family:'Poppins',sans-serif;font-size:clamp(26px,3.4vw,40px);font-weight:800;color:#17181A;line-height:1.22;margin-bottom:22px">The Best Corporate Car Rental Services in Bengaluru</h2>
+  <p style="color:#4B4F55;font-size:15.5px;line-height:1.75;margin-bottom:16px">For reliable, professional <strong style="color:#17181A">corporate car rental</strong>, the cab partner you choose makes all the difference. Whether you need daily employee transport, airport transfers, client pick-ups, or executive travel, our well-maintained fleet delivers comfort, punctuality, and safety on every business journey.</p>
+  <p style="color:#4B4F55;font-size:15.5px;line-height:1.75;margin-bottom:16px">Satya Tourists runs a wide range of <strong style="color:#17181A">corporate cab and taxi services</strong> for companies of every size &mdash; economical sedans for routine office commutes through to premium vehicles for senior executives and visiting guests.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px;margin-top:28px">
+    <img src="images/corporate-transport.png" alt="Corporate transportation with Satya Tourists" style="width:100%;border-radius:14px;box-shadow:0 10px 26px rgba(20,30,50,0.12)">
+    <img src="images/our-fleet.png" alt="Satya Tourists fleet available for corporate contracts" style="width:100%;border-radius:14px;box-shadow:0 10px 26px rgba(20,30,50,0.12)">
+    <img src="images/outstation.png" alt="Executive vehicle on an outstation business trip" style="width:100%;border-radius:14px;box-shadow:0 10px 26px rgba(20,30,50,0.12)">
+  </div>
+</section>
+
+<section data-screen-label="Why choose" style="background:#EAF4FF;padding:clamp(44px,5.5vw,64px) clamp(18px,2.2vw,32px) clamp(46px,5.8vw,70px);margin-top:60px">
+  <div style="max-width:1240px;margin:0 auto">
+    <h2 style="font-family:'Poppins',sans-serif;font-size:clamp(24px,3.2vw,34px);font-weight:800;color:#17181A;margin-bottom:28px">Why Choose Our Corporate Cabs and Taxi Services?</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:16px">
+      <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="6">
+        <div style="background:#fff;border-radius:14px;padding:20px 22px;box-shadow:0 6px 18px rgba(20,30,50,0.07);display:flex;gap:14px;align-items:flex-start">
+          <div style="flex-shrink:0;width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#F6F1E8">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#E0570A" stroke-width="2" style="width:20px;height:20px"><path d="M4 12.5l5 5L20 6.5"></path></svg>
+          </div>
+          <p style="font-size:14.5px;line-height:1.6;color:#4B4F55"><strong style="font-family:'Poppins',sans-serif;color:#17181A">{{ r.title }}</strong> {{ r.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Solutions" style="max-width:1240px;margin:0 auto;padding:clamp(44px,5.5vw,64px) clamp(18px,2.2vw,32px) 10px">
+  <h2 style="font-family:'Poppins',sans-serif;font-size:clamp(24px,3.2vw,34px);font-weight:800;color:#17181A;margin-bottom:16px">Corporate Travel Solutions We Offer</h2>
+  <p style="color:#4B4F55;font-size:15.5px;line-height:1.75;margin-bottom:22px">Our <strong style="color:#17181A">corporate taxi and cab rental services</strong> cover the full range of business transport requirements:</p>
+  <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;margin-bottom:32px">
+    <sc-for list="{{ solutions }}" as="s" hint-placeholder-count="6">
+      <li style="display:flex;align-items:center;gap:10px;font-size:15px;color:#4B4F55;background:#F7FAFD;border:1px solid #eef1f4;border-radius:10px;padding:14px 16px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1E8449" stroke-width="2" style="width:18px;height:18px;flex-shrink:0"><path d="M4 12.5l5 5L20 6.5"></path></svg>{{ s }}
+      </li>
+    </sc-for>
+  </ul>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px">
+    <img src="images/local.png" alt="Executive sedan for client pick-ups" style="width:100%;border-radius:14px;box-shadow:0 10px 26px rgba(20,30,50,0.12)">
+    <img src="images/airport.png" alt="Airport transfer for executives and guests" style="width:100%;border-radius:14px;box-shadow:0 10px 26px rgba(20,30,50,0.12)">
+    <img src="images/our-fleet.png" alt="Fleet available for daily office transport" style="width:100%;border-radius:14px;box-shadow:0 10px 26px rgba(20,30,50,0.12)">
+  </div>
+</section>
+
+<section data-screen-label="Closing copy" style="max-width:1240px;margin:0 auto;padding:clamp(40px,5vw,56px) clamp(18px,2.2vw,32px) 20px">
+  <h2 style="font-family:'Poppins',sans-serif;font-size:clamp(22px,2.6vw,30px);font-weight:800;color:#17181A;margin-bottom:14px">Comfortable &amp; Professional Business Travel</h2>
+  <p style="color:#4B4F55;font-size:15.5px;line-height:1.75;margin-bottom:28px">Corporate travel reflects your company's image. Clean vehicles, professional drivers, and a straightforward booking process keep the experience consistent &mdash; whether you need a single taxi for a meeting or a fleet of cabs for daily office transport.</p>
+  <h2 style="font-family:'Poppins',sans-serif;font-size:clamp(22px,2.6vw,30px);font-weight:800;color:#17181A;margin-bottom:14px">Book Corporate Cabs and Taxi Today</h2>
+  <p style="color:#4B4F55;font-size:15.5px;line-height:1.75">Talk to us about customised corporate packages for safe, comfortable, and efficient transport across Bengaluru.</p>
+</section>
+
+<section data-screen-label="Final CTA" style="position:relative;background:radial-gradient(ellipse 700px 400px at 12% 10%,rgba(244,113,30,0.22),transparent 60%),radial-gradient(ellipse 700px 400px at 88% 100%,rgba(30,132,73,0.28),transparent 60%),linear-gradient(180deg,#14151A 0%,#1B1D22 100%);padding:clamp(56px,7vw,80px) clamp(18px,2.2vw,32px);text-align:center;margin-top:40px">
+  <div style="max-width:920px;margin:0 auto">
+    <h2 style="font-family:'Poppins',sans-serif;color:#fff;font-size:clamp(24px,3.6vw,38px);font-weight:800;line-height:1.35;margin-bottom:22px">Set up a corporate account with Satya Tourists</h2>
+    <p style="color:#c7cad0;font-size:15.5px;line-height:1.7;max-width:760px;margin:0 auto 26px">Monthly billing, dedicated vehicles, and a single point of contact for your travel desk.</p>
+    <div style="display:inline-flex;align-items:center;gap:10px;color:#fff;font-size:clamp(17px,1.8vw,20px);font-weight:600;margin-bottom:22px">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F4711E" stroke-width="2"><path d="M3 5a2 2 0 012-2h2l2 5-2 1a11 11 0 006 6l1-2 5 2v2a2 2 0 01-2 2A16 16 0 013 5z"></path></svg>
+      Call Now <a href="tel:+919000000000" style="color:#fff">+91-90000 00000</a>
+    </div>
+    <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
+      <a href="mailto:info@satyatourists.in" style="padding:12px 26px;border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-weight:600;font-size:14.5px;box-shadow:0 8px 18px rgba(224,87,10,0.3)" style-hover="transform:translateY(-2px)">Request a Proposal</a>
+      <a href="Satya%20Tourists%20Our%20Fleet.dc.html" style="padding:12px 26px;border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-weight:600;font-size:14.5px;box-shadow:0 8px 18px rgba(224,87,10,0.3)" style-hover="transform:translateY(-2px)">View Our Fleet</a>
+    </div>
+  </div>
+</section>
+
+<footer id="contact" data-screen-label="Footer" style="position:relative;background:linear-gradient(180deg,#121317 0%,#0C0D10 100%);color:#b9bdc6">
+  <div style="height:3px;background:linear-gradient(90deg,#F4711E,#FFC72C 45%,#1E8449)"></div>
+
+  <div style="max-width:1400px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(18px,2.2vw,32px) clamp(28px,3vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:clamp(26px,3vw,44px)">
+
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="display:inline-flex;align-self:flex-start;background:#fff;border-radius:12px;padding:10px 16px">
+        <img src="images/logo.png" alt="Satya Tourists Bengaluru logo" style="height:40px;display:block">
+      </div>
+      <p style="font-size:14px;line-height:1.75;color:#9ba0a9;max-width:320px">Outstation, airport, local and corporate travel across Bengaluru and South India &mdash; verified drivers, inspected vehicles, and fares agreed up front.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <a href="tel:+919000000000" style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:9px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;box-shadow:0 8px 18px rgba(224,87,10,0.28)" style-hover="transform:translateY(-2px)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h2l2 5-2 1a11 11 0 006 6l1-2 5 2v2a2 2 0 01-2 2A16 16 0 013 5z"></path></svg>
+          Call Now
+        </a>
+        <a href="https://wa.me/919000000000" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:9px;background:#1E8449;color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:13px" style-hover="transform:translateY(-2px)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.06L2 22l5.1-1.34A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.3 1.18-1.78 1.24-.46.06-.92.1-1.94-.24-3.36-1.34-5.56-4.6-5.72-4.82-.16-.22-1.34-1.78-1.34-3.4 0-1.62.84-2.4 1.14-2.72.3-.32.66-.4.88-.4h.62c.2 0 .48-.02.7.54.24.6.82 2.06.9 2.2.08.14.14.32.02.5-.12.2-.2.32-.36.5-.16.18-.34.4-.48.54-.16.16-.34.34-.16.66.18.32.82 1.36 1.76 2.2 1.2 1.08 2.22 1.42 2.56 1.58.34.16.54.14.74-.08.2-.22.86-1 1.1-1.34.24-.34.48-.28.8-.16.32.12 2.02.96 2.36 1.14.34.18.56.26.64.4.08.14.08.82-.14 1.44z"></path></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <h3 style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:#fff;letter-spacing:0.02em">Services</h3>
+      <nav style="display:flex;flex-direction:column;gap:11px;font-size:14px">
+        <a href="Satya%20Tourists%20Outstation.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Outstation Taxi</a>
+        <a href="Satya%20Tourists%20Airport%20Taxi.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Airport Taxi</a>
+        <a href="Satya%20Tourists%20Local%20Taxi.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Local Taxi</a>
+        <a href="Satya%20Tourists%20Corporate%20Cabs.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Corporate Cabs</a>
+        <a href="Satya%20Tourists%20Our%20Fleet.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Tempo Traveller &amp; Bus Hire</a>
+        <a href="Satya%20Tourists%20Our%20Fleet.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Our Fleet</a>
+      </nav>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <h3 style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:#fff;letter-spacing:0.02em">Popular routes</h3>
+      <nav style="display:flex;flex-direction:column;gap:11px;font-size:14px">
+        <a href="Satya%20Tourists%20Outstation.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Bengaluru to Mysore</a>
+        <a href="Satya%20Tourists%20Outstation.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Bengaluru to Coorg</a>
+        <a href="Satya%20Tourists%20Outstation.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Bengaluru to Ooty</a>
+        <a href="Satya%20Tourists%20Outstation.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Bengaluru to Tirupati</a>
+        <a href="Satya%20Tourists%20Outstation.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Bengaluru to Chennai</a>
+        <a href="Satya%20Tourists%20Outstation.dc.html" style="color:#9ba0a9" style-hover="color:#F4711E">Bengaluru to Goa</a>
+      </nav>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <h3 style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:#fff;letter-spacing:0.02em">Reach us</h3>
+      <a href="tel:+919000000000" style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#fff;font-weight:600" style-hover="color:#F4711E">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F4711E" stroke-width="2" style="flex-shrink:0;margin-top:2px"><path d="M3 5a2 2 0 012-2h2l2 5-2 1a11 11 0 006 6l1-2 5 2v2a2 2 0 01-2 2A16 16 0 013 5z"></path></svg>
+        +91-90000 00000
+      </a>
+      <a href="mailto:info@satyatourists.in" style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#fff;font-weight:600" style-hover="color:#F4711E">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F4711E" stroke-width="2" style="flex-shrink:0;margin-top:2px"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+        info@satyatourists.in
+      </a>
+      <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.7;color:#9ba0a9">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F4711E" stroke-width="2" style="flex-shrink:0;margin-top:3px"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+        Bengaluru, Karnataka, India
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#9ba0a9">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F4711E" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>
+        Bookings open 24 x 7
+      </div>
+      <a href="Satya%20Tourists%20Contact.dc.html" style="align-self:flex-start;margin-top:4px;padding:10px 18px;border-radius:9px;border:1px solid #33363d;color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:13px" style-hover="border-color:#F4711E;color:#F4711E">Contact Us</a>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #232529">
+    <div data-footer-bottom style="max-width:1400px;margin:0 auto;padding:18px clamp(18px,2.2vw,32px) 22px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;font-size:13px;color:#71757e">
+      <span>Copyright &copy; 2024 Satya Tourists. All Rights Reserved.</span>
+      <nav style="display:flex;flex-wrap:wrap;gap:clamp(12px,1.6vw,22px)">
+        <a href="index.html" style="color:#71757e" style-hover="color:#fff">Home</a>
+        <a href="Satya%20Tourists%20Contact.dc.html" style="color:#71757e" style-hover="color:#fff">Contact</a>
+        <a href="Satya%20Tourists%20Our%20Fleet.dc.html" style="color:#71757e" style-hover="color:#fff">Our Fleet</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { navOpen: false };
+  renderVals() {
+    return {
+      navOpen: this.state.navOpen,
+      toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      reasons: [
+        { title: "Well-Maintained Fleet:", body: "Innova, Etios, Innova Crysta, luxury sedans, SUVs, and premium cars for business travel." },
+        { title: "Professional Chauffeurs:", body: "Experienced, trained, and courteous drivers who understand corporate expectations." },
+        { title: "On-Time Pickup & Drop:", body: "Punctual service so employees and clients reach their destinations without delays." },
+        { title: "Flexible Rental Plans:", body: "Hourly, daily, monthly, and long-term corporate packages available." },
+        { title: "Affordable Pricing:", body: "Transparent pricing with no hidden charges." },
+        { title: "24/7 Availability:", body: "Reliable taxi and cab services whenever your business needs transport." }
+      ],
+      solutions: [
+        "Employee transportation services",
+        "Airport transfers for executives and guests",
+        "Corporate event transportation",
+        "Client and guest pickup/drop services",
+        "Long-term corporate cab contracts",
+        "Outstation business trips"
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

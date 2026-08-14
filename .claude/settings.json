@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"/c/Users/krtan/Downloads/Copy of Files in folder review\" && ls -la | head -50)",
+      "Read(//c/Users/krtan/Downloads/Copy of Files in folder review/**)",
+      "Bash(mv \"index.dc.html\" \"index.html\")",
+      "Bash(grep -n \"index.dc.html\" \"/c/Users/krtan/Downloads/Copy of Files in folder review/.claude/settings.json\")",
+      "Read(//c/Users/krtan/Downloads/Copy of Files in folder review/.claude/**)"
+    ]
+  }
+}
