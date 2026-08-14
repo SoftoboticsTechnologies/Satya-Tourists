@@ -36,7 +36,22 @@
       "Bash(python -c \"from PIL import Image; print\\('ok'\\)\")",
       "Bash(python -c ' *)",
       "Bash(curl -sL -A Mozilla/5.0 https://upload.wikimedia.org/wikipedia/commons/6/68/Toyota_Innova_Crysta.jpg -o /c/Users/krtan/AppData/Local/Temp/claude/c--Users-krtan-Downloads-Copy-of-Files-in-folder-review/e600aec9-3ee2-4948-a2ed-4b2189c1cca3/scratchpad/innova2.jpg)",
-      "Bash(perl -0pi -e 's/<div style=\"display:flex;align-items:center;gap:10px;flex-shrink:0\">/<div data-navbar-mid style=\"display:flex;align-items:center;justify-content:center;gap:10px;flex-shrink:0\">/' \"Satya Tourists Contact.dc.html\")"
+      "Bash(perl -0pi -e 's/<div style=\"display:flex;align-items:center;gap:10px;flex-shrink:0\">/<div data-navbar-mid style=\"display:flex;align-items:center;justify-content:center;gap:10px;flex-shrink:0\">/' \"Satya Tourists Contact.dc.html\")",
+      "Bash(cd \"/c/Users/krtan/Downloads/Copy of Files in folder review\" && grep -n \"fleet:\\\\s*\\\\[\" -A 20 \"Satya Tourists Airport Taxi.dc.html\" | head -30 *)",
+      "Bash(cd \"/c/Users/krtan/Downloads/Copy of Files in folder review\" && grep -n \"showcase\\\\|fleet\\\\|icon-sedan\\\\|icon-suv\\\\|icon-van\\\\|icon-bus\\\\|icon-mpv\" \"Satya Tourists Airport Taxi.dc.html\" | head -40)",
+      "Bash(cd \"/c/Users/krtan/Downloads/Copy of Files in folder review\" && grep -n \"Swift Dzire\\\\|Mahindra Verito\\\\|Toyota Etios\\\\|icon-suv\\\\|icon-van\\\\|icon-bus\\\\|icon-mpv\" \"Satya Tourists Local Taxi.dc.html\" *)",
+      "Bash(cd \"/c/Users/krtan/Downloads/Copy of Files in folder review\" && grep -n \"^\\\\s*\\\\w*:\\\\s*\\\\[\" \"Satya Tourists Airport Taxi.dc.html\" | head -20 *)",
+      "Bash(cd \"/c/Users/krtan/Downloads/Copy of Files in folder review\" && grep -n \"packages\" \"Satya Tourists Airport Taxi.dc.html\")",
+      "Bash(cd \"/c/Users/krtan/Downloads/Copy of Files in folder review\" && grep -n \"symbol id=\" \"Satya Tourists Airport Taxi.dc.html\" *)",
+      "Bash(cd \"/c/Users/krtan/Downloads/Copy of Files in folder review\" && grep -n \"sc-for\\\\|packages:\\\\|fleet:\\\\|vehicles:\\\\|renderVals\" \"Satya Tourists Corporate Cabs.dc.html\")",
+      "Bash(cd \"/c/Users/krtan/Downloads/Copy of Files in folder review\" && grep -n \"sc-for list=\\\\\"{{ \" \"Satya Tourists Local Taxi.dc.html\")",
+      "Bash(cd \"/c/Users/krtan/Downloads/Copy of Files in folder review\" && grep -n \"packages:\" -A 10 \"Satya Tourists Local Taxi.dc.html\")",
+      "Bash(cd \"/c/Users/krtan/Downloads/Copy of Files in folder review\" && sed -n '71,82p' \"Satya Tourists Airport Taxi.dc.html\")",
+      "Bash(cd \"/c/Users/krtan/Downloads/Copy of Files in folder review\" && grep -n \"packages:\" -A 8 \"Satya Tourists Airport Taxi.dc.html\")",
+      "Bash(sed -i 's/<sc-for list=\"{{ packages }}\" as=\"p\" hint-placeholder-count=\"4\">/<sc-for list=\"{{ packages }}\" as=\"p\" hint-placeholder-count=\"8\">/' \"Satya Tourists Airport Taxi.dc.html\" \"Satya Tourists Local Taxi.dc.html\")",
+      "Bash(grep -n \"renderVals\\\\|reasons:\\\\|solutions:\\\\|^\\\\s*};\\\\|^\\\\s*}$\" \"Satya Tourists Corporate Cabs.dc.html\")",
+      "Bash(cd \"/c/Users/krtan/Downloads/Copy of Files in folder review\" && sed -n '325,332p' \"Satya Tourists Corporate Cabs.dc.html\")",
+      "Bash(node -e ' *)"
     ]
   }
 }

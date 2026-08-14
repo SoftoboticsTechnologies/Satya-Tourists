@@ -79,6 +79,32 @@
       <circle cx="186" cy="92" r="16" fill="#1E2126"></circle>
       <circle cx="186" cy="92" r="7" fill="#E8EEF3"></circle>
     </symbol>
+    <symbol id="icon-van" viewBox="0 0 240 110">
+      <rect x="8" y="76" width="224" height="5" rx="2" fill="#1E8449"></rect>
+      <path d="M16 88 Q14 30 40 24 L206 24 Q226 28 226 60 L226 88 Q226 94 219 94 L21 94 Q16 94 16 88 Z" fill="#1E2126"></path>
+      <rect x="26" y="32" width="34" height="26" rx="4" fill="#E8EEF3"></rect>
+      <rect x="68" y="32" width="34" height="26" rx="4" fill="#E8EEF3"></rect>
+      <rect x="110" y="32" width="34" height="26" rx="4" fill="#E8EEF3"></rect>
+      <rect x="152" y="32" width="34" height="26" rx="4" fill="#E8EEF3"></rect>
+      <circle cx="58" cy="94" r="16" fill="#1E2126"></circle>
+      <circle cx="58" cy="94" r="7" fill="#E8EEF3"></circle>
+      <circle cx="188" cy="94" r="16" fill="#1E2126"></circle>
+      <circle cx="188" cy="94" r="7" fill="#E8EEF3"></circle>
+    </symbol>
+    <symbol id="icon-bus" viewBox="0 0 240 110">
+      <rect x="4" y="78" width="232" height="5" rx="2" fill="#163E6E"></rect>
+      <path d="M10 90 Q8 26 32 20 L214 20 Q232 26 232 62 L232 90 Q232 96 225 96 L15 96 Q10 96 10 90 Z" fill="#1E2126"></path>
+      <rect x="20" y="28" width="26" height="24" rx="4" fill="#E8EEF3"></rect>
+      <rect x="52" y="28" width="26" height="24" rx="4" fill="#E8EEF3"></rect>
+      <rect x="84" y="28" width="26" height="24" rx="4" fill="#E8EEF3"></rect>
+      <rect x="116" y="28" width="26" height="24" rx="4" fill="#E8EEF3"></rect>
+      <rect x="148" y="28" width="26" height="24" rx="4" fill="#E8EEF3"></rect>
+      <rect x="180" y="28" width="26" height="24" rx="4" fill="#E8EEF3"></rect>
+      <circle cx="52" cy="96" r="16" fill="#1E2126"></circle>
+      <circle cx="52" cy="96" r="7" fill="#E8EEF3"></circle>
+      <circle cx="190" cy="96" r="16" fill="#1E2126"></circle>
+      <circle cx="190" cy="96" r="7" fill="#E8EEF3"></circle>
+    </symbol>
   </defs>
 </svg>
 
@@ -132,7 +158,7 @@
   </div>
 
   <div style="max-width:1462px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:22px">
-    <sc-for list="{{ packages }}" as="p" hint-placeholder-count="4">
+    <sc-for list="{{ packages }}" as="p" hint-placeholder-count="8">
       <div style="background:#fff;border-radius:16px;padding:22px 22px 24px;box-shadow:0 6px 18px rgba(20,30,50,0.07);border:1px solid #eef1f4;display:flex;flex-direction:column" style-hover="transform:translateY(-5px);box-shadow:0 16px 30px rgba(20,30,50,0.12)">
         <div style="text-align:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;color:#17181A">{{ p.name }}</div>
         <div style="text-align:center;font-size:12.5px;color:#E0570A;font-weight:600;margin-top:2px;margin-bottom:14px">Airport Taxi</div>
@@ -285,7 +311,11 @@ class Component extends DCLogic {
         { name: "Hatchback AC", icon: "#icon-hatch", tariff: R + "899.00", toll: R + "120.00 extra", seats: "4+1" },
         { name: "Swift Dzire AC", icon: "#icon-sedan", tariff: R + "949.00", toll: R + "120.00 extra", seats: "4+1" },
         { name: "Mahindra Verito AC", icon: "#icon-sedan", tariff: R + "949.00", toll: R + "120.00 extra", seats: "4+1" },
-        { name: "Toyota Etios AC", icon: "#icon-sedan", tariff: R + "990.00", toll: R + "120.00 extra", seats: "4+1" }
+        { name: "Toyota Etios AC", icon: "#icon-sedan", tariff: R + "990.00", toll: R + "120.00 extra", seats: "4+1" },
+        { name: "Ertiga SUV", icon: "#icon-suv", tariff: R + "1400.00", toll: R + "120.00 extra", seats: "6+1" },
+        { name: "Toyota Innova", icon: "#icon-mpv", tariff: R + "1600.00", toll: R + "120.00 extra", seats: "7+1" },
+        { name: "Tempo Traveller", icon: "#icon-van", tariff: R + "2200.00", toll: R + "120.00 extra", seats: "12+1" },
+        { name: "Mini Bus", icon: "#icon-bus", tariff: R + "3500.00", toll: R + "120.00 extra", seats: "20+1" }
       ],
       reasons: [
         "Fixed fares agreed before travel",
