@@ -19,6 +19,9 @@
   a:hover{color:#E0570A;}
   button{font-family:inherit;cursor:pointer;border:none;}
 
+  [data-service-row]:nth-of-type(even) [data-service-row-text]{order:2;}
+  [data-service-row]:nth-of-type(even) [data-service-row-img]{order:1;}
+
   @media (max-width:960px){
     [data-desktop-nav]{display:none !important;}
     [data-navbar]{gap:10px !important;padding:10px 16px !important;}
@@ -293,14 +296,14 @@
 
 <div data-screen-label="Service rows">
   <sc-for list="{{ serviceRows }}" as="row" hint-placeholder-count="4">
-    <div id="{{ row.id }}" style="padding:clamp(44px,5.5vw,64px) clamp(18px,2.2vw,32px);max-width:1350px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(28px,4vw,60px);align-items:center;border-top:1px solid #e9edf1">
-      <div>
+    <div id="{{ row.id }}" data-service-row style="padding:clamp(44px,5.5vw,64px) clamp(18px,2.2vw,32px);max-width:1350px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(28px,4vw,60px);align-items:center;border-top:1px solid #e9edf1">
+      <div data-service-row-text>
         <h2 style="font-family:'Poppins',sans-serif;font-size:clamp(24px,3vw,32px);font-weight:800;color:#17181A;margin-bottom:18px;line-height:1.25">{{ row.h2 }}</h2>
         <h3 style="font-family:'Poppins',sans-serif;font-size:clamp(18px,2vw,22px);font-weight:600;color:#17181A;margin-bottom:16px">{{ row.h3 }}</h3>
         <p style="color:#4B4F55;font-size:15px;line-height:1.7;margin-bottom:24px">{{ row.body }}</p>
         <a href="#book" style="display:inline-block;padding:12px 28px;border-radius:8px;font-family:'Poppins',sans-serif;font-weight:600;font-size:13.5px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;box-shadow:0 8px 16px rgba(224,87,10,0.28)" style-hover="transform:translateY(-2px)">Book Online</a>
       </div>
-      <div>
+      <div data-service-row-img>
         <img src="{{ row.img }}" alt="{{ row.h2 }}" style="width:100%;border-radius:14px;box-shadow:0 14px 34px rgba(20,30,50,0.14)">
       </div>
     </div>
