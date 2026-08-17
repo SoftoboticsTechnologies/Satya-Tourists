@@ -32,6 +32,7 @@
     [data-phone-text]{display:none !important;}
     [data-footer-bottom]{flex-direction:column !important;text-align:center !important;justify-content:center !important;}
   }
+  
 </style>
 </helmet>
 
@@ -263,16 +264,38 @@
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   state = { navOpen: false };
+
   renderVals() {
     return {
       navOpen: this.state.navOpen,
       toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
       noop: (e) => e.preventDefault(),
+
       channels: [
-        { label: "Call the booking desk", value: "+91-90000 00000", href: "tel:+919000000000", path: "M3 5a2 2 0 012-2h2l2 5-2 1a11 11 0 006 6l1-2 5 2v2a2 2 0 01-2 2A16 16 0 013 5z" },
-        { label: "WhatsApp", value: "Share your trip details and get a quote", href: "https://wa.me/919000000000", path: "M21 11.5a8.5 8.5 0 01-12.3 7.6L3 21l1.9-5.6A8.5 8.5 0 1121 11.5z" },
-        { label: "Email", value: "info@satyatourists.in", href: "mailto:info@satyatourists.in", path: "M3 6h18v12H3zM3 7l9 6 9-6" },
-        { label: "Corporate accounts", value: "Monthly billing and dedicated vehicles", href: "index.html", path: "M4 21V8l8-4 8 4v13M9 21v-6h6v6" }
+        {
+          label: "Call the booking desk",
+          value: "+91-90000 00000",
+          href: "tel:+919000000000",
+          path: "M3 5a2 2 0 012-2h2l2 5-2 1a11 11 0 006 6l1-2 5 2v2a2 2 0 01-2 2A16 16 0 013 5z"
+        },
+        {
+          label: "WhatsApp",
+          value: "Share your trip details and get a quote",
+          href: "https://wa.me/919000000000",
+          path: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.67-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.004 2C6.477 2 2 6.477 2 12c0 1.768.46 3.429 1.265 4.877L2 22l5.243-1.24A9.94 9.94 0 0 0 12.004 22C17.523 22 22 17.523 22 12S17.523 2 12.004 2"
+        },
+        {
+          label: "Email",
+          value: "info@satyatourists.in",
+          href: "mailto:info@satyatourists.in",
+          path: "M3 6h18v12H3zM3 7l9 6 9-6"
+        },
+        {
+          label: "Corporate accounts",
+          value: "Monthly billing and dedicated vehicles",
+          href: "index.html",
+          path: "M4 21V8l8-4 8 4v13M9 21v-6h6v6"
+        }
       ]
     };
   }
