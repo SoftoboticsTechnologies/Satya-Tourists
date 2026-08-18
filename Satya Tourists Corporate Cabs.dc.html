@@ -151,8 +151,13 @@
       <div style="background:#fff;border-radius:16px;padding:22px 22px 24px;box-shadow:0 6px 18px rgba(20,30,50,0.07);border:1px solid #eef1f4;display:flex;flex-direction:column" style-hover="transform:translateY(-5px);box-shadow:0 16px 30px rgba(20,30,50,0.12)">
         <div style="text-align:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;color:#17181A">{{ v.name }}</div>
         <div style="text-align:center;font-size:12.5px;color:#E0570A;font-weight:600;margin-top:2px;margin-bottom:14px">Corporate Cabs</div>
-        <div style="height:84px;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
-          <svg style="height:100%;width:auto"><use href="{{ v.icon }}"></use></svg>
+        <div style="height:150px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;overflow:hidden;border-radius:10px">
+          <sc-if value="{{ v.hasPhoto }}" hint-placeholder-val="{{ false }}">
+            <img src="{{ v.photo }}" alt="{{ v.name }}" style="height:100%;width:100%;object-fit:cover">
+          </sc-if>
+          <sc-if value="{{ v.noPhoto }}" hint-placeholder-val="{{ true }}">
+            <svg style="height:78%;width:auto"><use href="{{ v.icon }}"></use></svg>
+          </sc-if>
         </div>
         <dl style="font-size:13.5px;display:grid;grid-template-columns:auto 1fr;row-gap:7px;column-gap:10px;margin-bottom:14px">
           <dt style="font-weight:700;color:#17181A">Tariff</dt><dd style="text-align:right;font-weight:700;color:#14602F">{{ v.tariff }}</dd>
@@ -332,6 +337,12 @@ class Component extends DCLogic {
   state = { navOpen: false };
   renderVals() {
     const R = "₹";
+    const FLEET_PHOTOS = { sedan: "images/fleet/dzire.png", suv: "images/fleet/eartiga.png", van: "images/fleet/force%20tempo.jpeg", mpv: "images/fleet/innova.jpeg", bus: "images/fleet/bus.jpeg" };
+    const f = (name, icon, tariff, seats) => {
+      const type = icon.replace("#icon-", "");
+      const photo = FLEET_PHOTOS[type] || "";
+      return { name, icon, tariff, seats, photo, hasPhoto: !!photo, noPhoto: !photo };
+    };
     return {
       navOpen: this.state.navOpen,
       toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
@@ -352,11 +363,11 @@ class Component extends DCLogic {
         "Outstation business trips"
       ],
       fleet: [
-        { name: "Swift Dzire / Etios", icon: "#icon-sedan", tariff: R + "1800.00", seats: "4+1" },
-        { name: "Ertiga SUV", icon: "#icon-suv", tariff: R + "2100.00", seats: "6+1" },
-        { name: "Toyota Innova Crysta", icon: "#icon-mpv", tariff: R + "2600.00", seats: "7+1" },
-        { name: "Tempo Traveller", icon: "#icon-van", tariff: R + "3800.00", seats: "12+1" },
-        { name: "Mini Bus", icon: "#icon-bus", tariff: R + "5500.00", seats: "20+1" }
+        f("Swift Dzire / Etios", "#icon-sedan", R + "1800.00", "4+1"),
+        f("Ertiga SUV", "#icon-suv", R + "2100.00", "6+1"),
+        f("Toyota Innova Crysta", "#icon-mpv", R + "2600.00", "7+1"),
+        f("Tempo Traveller", "#icon-van", R + "3800.00", "12+1"),
+        f("Mini Bus", "#icon-bus", R + "5500.00", "20+1")
       ]
     };
   }

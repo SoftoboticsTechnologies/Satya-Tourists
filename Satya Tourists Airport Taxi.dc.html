@@ -161,8 +161,13 @@
       <div style="background:#fff;border-radius:16px;padding:22px 22px 24px;box-shadow:0 6px 18px rgba(20,30,50,0.07);border:1px solid #eef1f4;display:flex;flex-direction:column" style-hover="transform:translateY(-5px);box-shadow:0 16px 30px rgba(20,30,50,0.12)">
         <div style="text-align:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;color:#17181A">{{ p.name }}</div>
         <div style="text-align:center;font-size:12.5px;color:#E0570A;font-weight:600;margin-top:2px;margin-bottom:14px">Airport Taxi</div>
-        <div style="height:84px;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
-          <svg style="height:100%;width:auto"><use href="{{ p.icon }}"></use></svg>
+        <div style="height:150px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;overflow:hidden;border-radius:10px">
+          <sc-if value="{{ p.hasPhoto }}" hint-placeholder-val="{{ false }}">
+            <img src="{{ p.photo }}" alt="{{ p.name }}" style="height:100%;width:100%;object-fit:cover">
+          </sc-if>
+          <sc-if value="{{ p.noPhoto }}" hint-placeholder-val="{{ true }}">
+            <svg style="height:78%;width:auto"><use href="{{ p.icon }}"></use></svg>
+          </sc-if>
         </div>
         <dl style="font-size:13.5px;display:grid;grid-template-columns:auto 1fr;row-gap:7px;column-gap:10px;margin-bottom:14px">
           <dt style="font-weight:700;color:#17181A">Tariff</dt><dd style="text-align:right;font-weight:700;color:#14602F">{{ p.tariff }}</dd>
@@ -308,18 +313,24 @@ class Component extends DCLogic {
   state = { navOpen: false };
   renderVals() {
     const R = "\u20B9";
+    const FLEET_PHOTOS = { sedan: "images/fleet/dzire.png", suv: "images/fleet/eartiga.png", van: "images/fleet/force%20tempo.jpeg", mpv: "images/fleet/innova.jpeg", bus: "images/fleet/bus.jpeg" };
+    const pk = (name, icon, tariff, toll, seats) => {
+      const type = icon.replace("#icon-", "");
+      const photo = FLEET_PHOTOS[type] || "";
+      return { name, icon, tariff, toll, seats, photo, hasPhoto: !!photo, noPhoto: !photo };
+    };
     return {
       navOpen: this.state.navOpen,
       toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
       packages: [
-        { name: "Hatchback AC", icon: "#icon-hatch", tariff: R + "899.00", toll: R + "120.00 extra", seats: "4+1" },
-        { name: "Swift Dzire AC", icon: "#icon-sedan", tariff: R + "949.00", toll: R + "120.00 extra", seats: "4+1" },
-        { name: "Mahindra Verito AC", icon: "#icon-sedan", tariff: R + "949.00", toll: R + "120.00 extra", seats: "4+1" },
-        { name: "Toyota Etios AC", icon: "#icon-sedan", tariff: R + "990.00", toll: R + "120.00 extra", seats: "4+1" },
-        { name: "Ertiga SUV", icon: "#icon-suv", tariff: R + "1400.00", toll: R + "120.00 extra", seats: "6+1" },
-        { name: "Toyota Innova", icon: "#icon-mpv", tariff: R + "1600.00", toll: R + "120.00 extra", seats: "7+1" },
-        { name: "Tempo Traveller", icon: "#icon-van", tariff: R + "2200.00", toll: R + "120.00 extra", seats: "12+1" },
-        { name: "Mini Bus", icon: "#icon-bus", tariff: R + "3500.00", toll: R + "120.00 extra", seats: "20+1" }
+        pk("Hatchback AC", "#icon-hatch", R + "899.00", R + "120.00 extra", "4+1"),
+        pk("Swift Dzire AC", "#icon-sedan", R + "949.00", R + "120.00 extra", "4+1"),
+        pk("Maruti WagonR AC", "#icon-sedan", R + "949.00", R + "120.00 extra", "4+1"),
+        pk("Toyota Etios AC", "#icon-sedan", R + "990.00", R + "120.00 extra", "4+1"),
+        pk("Ertiga SUV", "#icon-suv", R + "1400.00", R + "120.00 extra", "6+1"),
+        pk("Toyota Innova", "#icon-mpv", R + "1600.00", R + "120.00 extra", "7+1"),
+        pk("Tempo Traveller", "#icon-van", R + "2200.00", R + "120.00 extra", "12+1"),
+        pk("Mini Bus", "#icon-bus", R + "3500.00", R + "120.00 extra", "20+1")
       ],
       reasons: [
         "Fixed fares agreed before travel",
