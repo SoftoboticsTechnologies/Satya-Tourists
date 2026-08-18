@@ -314,7 +314,7 @@ class Component extends DCLogic {
   renderVals() {
     const R = "\u20B9";
     const FLEET_PHOTOS = { sedan: "images/fleet/dzire.png", suv: "images/fleet/eartiga.png", van: "images/fleet/Tempo%20Traveller%20Non%20AC.png", mpv: "images/fleet/innova.jpeg", bus: "images/fleet/Mini%20Bus%20%2021+1.jpeg" };
-    const NAME_PHOTOS = { "Toyota Innova": "images/fleet/innova.png", "Swift Dzire AC": "images/fleet/swift.png", "Maruti WagonR AC": "images/fleet/wagonR.png", "Toyota Etios AC": "images/fleet/etios.png" };
+    const NAME_PHOTOS = { "Toyota Innova": "images/fleet/innova.png", "Swift AC": "images/fleet/swift.png", "Dzire AC": "images/fleet/dzire.png", "Maruti WagonR AC": "images/fleet/wagonR.png", "Toyota Etios AC": "images/fleet/etios.png" };
     const pk = (name, icon, tariff, toll, seats) => {
       const type = icon.replace("#icon-", "");
       const photo = NAME_PHOTOS[name] || FLEET_PHOTOS[type] || "";
@@ -324,8 +324,8 @@ class Component extends DCLogic {
       navOpen: this.state.navOpen,
       toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
       packages: [
-        pk("Hatchback AC", "#icon-hatch", R + "899.00", R + "120.00 extra", "4+1"),
-        pk("Swift Dzire AC", "#icon-sedan", R + "949.00", R + "120.00 extra", "4+1"),
+        pk("Swift AC", "#icon-sedan", R + "899.00", R + "120.00 extra", "4+1"),
+        pk("Dzire AC", "#icon-sedan", R + "949.00", R + "120.00 extra", "4+1"),
         pk("Maruti WagonR AC", "#icon-sedan", R + "949.00", R + "120.00 extra", "4+1"),
         pk("Toyota Etios AC", "#icon-sedan", R + "990.00", R + "120.00 extra", "4+1"),
         pk("Ertiga SUV", "#icon-suv", R + "1400.00", R + "120.00 extra", "6+1"),

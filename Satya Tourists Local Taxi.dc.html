@@ -316,7 +316,7 @@ class Component extends DCLogic {
   renderVals() {
     const R = "\u20B9";
     const FLEET_PHOTOS = { sedan: "images/fleet/dzire.png", suv: "images/fleet/eartiga.png", van: "images/fleet/Tempo%20Traveller%20Non%20AC.png", mpv: "images/fleet/innova.jpeg", bus: "images/fleet/Mini%20Bus%20%2021+1.jpeg" };
-    const NAME_PHOTOS = { "Toyota Innova": "images/fleet/innova.png" };
+    const NAME_PHOTOS = { "Toyota Innova": "images/fleet/innova.png", "Swift AC": "images/fleet/swift.png" };
     const pk = (name, icon, tariff, included, extraKm, extraHour, seats) => {
       const type = icon.replace("#icon-", "");
       const photo = NAME_PHOTOS[name] || FLEET_PHOTOS[type] || "";
@@ -327,7 +327,7 @@ class Component extends DCLogic {
       toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
       packages: [
         pk("Sedan Cab", "#icon-sedan", R + "1200.00", "4Hrs 40Kms", R + "13.00 /km", R + "150.00/hour", "4+1"),
-        pk("Hatchback AC", "#icon-hatch", R + "1899.00", "8Hrs 80Kms", R + "14.00 /km", R + "140.00/hour", "4+1"),
+        pk("Swift AC", "#icon-sedan", R + "1899.00", "8Hrs 80Kms", R + "14.00 /km", R + "140.00/hour", "4+1"),
         pk("Ertiga SUV", "#icon-suv", R + "1900.00", "4Hrs 40Kms", R + "18.00 /km", R + "200.00/hour", "6+1"),
         pk("Toyota Innova", "#icon-mpv", R + "2000.00", "4Hrs 40Kms", R + "20.00 /km", R + "200.00/hour", "7+1"),
         pk("Tempo Traveller", "#icon-van", R + "2800.00", "4Hrs 40Kms", R + "25.00 /km", R + "250.00/hour", "12+1"),

@@ -337,6 +337,10 @@ class Component extends DCLogic {
     const R = "\u20B9";
     const FLEET_PHOTOS = { sedan: "images/fleet/dzire.png", suv: "images/fleet/eartiga.png", van: "images/fleet/Tempo%20Traveller%20Non%20AC.png", mpv: "images/fleet/innova.jpeg", bus: "images/fleet/Mini%20Bus%20%2021+1.jpeg" };
     const NAME_PHOTOS = {
+      "Dzire AC": "images/fleet/dzire.png",
+      "Swift AC": "images/fleet/swift.png",
+      "Maruti WagonR AC": "images/fleet/wagonR.png",
+      "Toyota Etios AC": "images/fleet/etios.png",
       "Toyota Innova AC": "images/fleet/innova.png",
       "Innova Taxi Rentals in Bangalore": "images/fleet/innova.png",
       "Toyota Innova Crysta AC": "images/fleet/crysta.png",
@@ -389,15 +393,16 @@ class Component extends DCLogic {
         { src: "images/corporate-transport.png", alt: "Corporate transportation", href: "index.html" }
       ],
       fleet: [
-        f("Sedan AC", "Outstation Taxi", "sedan", "12.00", "400.00", "4+1"),
+        f("Dzire AC", "Outstation Taxi", "sedan", "12.00", "400.00", "4+1"),
+        f("Swift AC", "Outstation Taxi", "sedan", "12.00", "400.00", "4+1"),
+        f("Maruti WagonR AC", "Outstation Taxi", "sedan", "12.00", "400.00", "4+1"),
+        f("Toyota Etios AC", "Outstation Taxi", "sedan", "13.00", "400.00", "4+1"),
         f("Ertiga SUV", "Outstation Cabs", "suv", "15.00", "400.00", "6+1"),
         f("Toyota Innova AC", "Outstation Taxi", "mpv", "17.00", "400.00", "7+1"),
         f("Toyota Innova Crysta AC", "Outstation Taxi", "mpv", "18.00", "400.00", "7+1"),
         f("Tempo Traveller Non AC", "Tempo Traveller Rentals", "van", "19.00", "500.00", "12+1"),
         f("Tempo Traveller AC", "TT Rentals", "van", "21.00", "500.00", "12+1"),
-        f("Tempo Traveller Non AC", "Tempo Traveller Hire", "van", "22.00", "600.00", "14+1"),
         f("Innova Crysta Hycross AC", "Outstation Cabs", "mpv", "23.00", "500.00", "7+1"),
-        f("Tempo Traveller AC", "TT Rental", "van", "24.00", "600.00", "14+1"),
         f("Mini Bus Non/AC 21+1", "Rent Mini Bus", "bus", "28.00", "600.00", "21+1"),
         f("Maharaja Tempo Traveller A/C", "Tempo Traveller on Rent", "van", "28.00", "500.00", "9+1"),
         f("Mini Bus AC 21+1", "Hire Mini Bus on Rent", "bus", "30.00", "600.00", "21+1"),
