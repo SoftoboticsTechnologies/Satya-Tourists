@@ -363,9 +363,27 @@ class Component extends DCLogic {
   state = { navOpen: false };
   renderVals() {
     const R = "\u20B9";
-    const FLEET_PHOTOS = { sedan: "images/fleet/dzire.png", suv: "images/fleet/eartiga.png", van: "images/fleet/force%20tempo.jpeg", mpv: "images/fleet/innova.jpeg", bus: "images/fleet/bus.jpeg" };
+    const FLEET_PHOTOS = { sedan: "images/fleet/dzire.png", suv: "images/fleet/eartiga.png", van: "images/fleet/Tempo%20Traveller%20Non%20AC.png", mpv: "images/fleet/innova.jpeg", bus: "images/fleet/Mini%20Bus%20%2021+1.jpeg" };
+    const NAME_PHOTOS = {
+      "Toyota Innova AC": "images/fleet/innova.png",
+      "Toyota Innova Crysta AC": "images/fleet/crysta.png",
+      "Innova Crysta Hycross AC": "images/fleet/hycross.png",
+      "Tempo Traveller Non AC": "images/fleet/Tempo%20Traveller%20Non%20AC.png",
+      "Tempo Traveller AC": "images/fleet/Tempo%20Traveller%20AC.png",
+      "Maharaja Tempo Traveller A/C": "images/fleet/Maharaja%20Tempo%20Traveller.png",
+      "Force Urbania 9+1": "images/fleet/Force%20Urbania%209+1.png",
+      "Force Urbania 16+1": "images/fleet/Force%20Urbania%2016+1.png",
+      "Mini Bus Non/AC 21+1": "images/fleet/Mini%20Bus%20%2021+1.jpeg",
+      "Mini Bus AC 21+1": "images/fleet/Mini%20Bus%20%2021+1.jpeg",
+      "Mini Bus Non/AC 25+1": "images/fleet/Mini%20Bus%20%2025+1.png",
+      "Mini Bus AC 25+1": "images/fleet/Mini%20Bus%20%2025+1.png",
+      "Bus Non/AC 33+1": "images/fleet/Bus%20%2033+1.png",
+      "Bus A/C 33+1": "images/fleet/Bus%20%2033+1.png",
+      "Bus Non/AC 49+1": "images/fleet/Bus%2049+1.png",
+      "Bus A/C 49+1": "images/fleet/Bus%2049+1.png"
+    };
     const f = (name, type, icon, tariff, bata, seats) => {
-      const photo = FLEET_PHOTOS[icon] || "";
+      const photo = NAME_PHOTOS[name] || FLEET_PHOTOS[icon] || "";
       return { name, type, icon: "#icon-" + icon, tariff: R + tariff + "/km", bata: R + bata + "/day", seats, photo, hasPhoto: !!photo, noPhoto: !photo };
     };
     const r = (name, km, fare) => ({ name, km: km + " km", fare: R + fare });

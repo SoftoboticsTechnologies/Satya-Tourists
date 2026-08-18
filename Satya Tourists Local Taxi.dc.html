@@ -315,10 +315,11 @@ class Component extends DCLogic {
   state = { navOpen: false };
   renderVals() {
     const R = "\u20B9";
-    const FLEET_PHOTOS = { sedan: "images/fleet/dzire.png", suv: "images/fleet/eartiga.png", van: "images/fleet/force%20tempo.jpeg", mpv: "images/fleet/innova.jpeg", bus: "images/fleet/bus.jpeg" };
+    const FLEET_PHOTOS = { sedan: "images/fleet/dzire.png", suv: "images/fleet/eartiga.png", van: "images/fleet/Tempo%20Traveller%20Non%20AC.png", mpv: "images/fleet/innova.jpeg", bus: "images/fleet/Mini%20Bus%20%2021+1.jpeg" };
+    const NAME_PHOTOS = { "Toyota Innova": "images/fleet/innova.png" };
     const pk = (name, icon, tariff, included, extraKm, extraHour, seats) => {
       const type = icon.replace("#icon-", "");
-      const photo = FLEET_PHOTOS[type] || "";
+      const photo = NAME_PHOTOS[name] || FLEET_PHOTOS[type] || "";
       return { name, icon, tariff, included, extraKm, extraHour, seats, photo, hasPhoto: !!photo, noPhoto: !photo };
     };
     return {
