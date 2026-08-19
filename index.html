@@ -121,10 +121,10 @@
   <div data-navbar style="max-width:1526px;margin:0 auto;display:flex;align-items:center;flex-wrap:wrap;gap:clamp(10px,1.6vw,28px);padding:clamp(10px,1.4vw,14px) clamp(16px,2.2vw,32px);position:relative">
     <a href="#top" style="flex-shrink:0"><img src="images/logo-nav.png" alt="Satya Tourists Bengaluru logo" style="height:clamp(34px,3.2vw,46px);display:block"></a>
     <div data-navbar-mid style="display:flex;align-items:center;justify-content:center;gap:12px;flex-shrink:0">
-      <a href="tel:+919000000000" style="padding:clamp(8px,1vw,11px) clamp(14px,1.6vw,22px);border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(12px,1vw,14px);box-shadow:0 8px 16px rgba(224,87,10,0.28);white-space:nowrap" style-hover="filter:brightness(1.06)">Book Now</a>
-      <a href="tel:+919000000000" style="display:flex;align-items:center;gap:8px;padding:clamp(8px,1vw,11px) clamp(12px,1.4vw,20px);border-radius:8px;background:#17181A;color:#fff;font-weight:700;font-size:clamp(12px,1vw,14px);white-space:nowrap" style-hover="filter:brightness(1.2)">
+      <a href="Satya%20Tourists%20Contact.dc.html" style="padding:clamp(8px,1vw,11px) clamp(14px,1.6vw,22px);border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(12px,1vw,14px);box-shadow:0 8px 16px rgba(224,87,10,0.28);white-space:nowrap" style-hover="filter:brightness(1.06)">Book Now</a>
+      <a href="tel:+918884588886" style="display:flex;align-items:center;gap:8px;padding:clamp(8px,1vw,11px) clamp(12px,1.4vw,20px);border-radius:8px;background:#1E8449;color:#fff;font-weight:700;font-size:clamp(12px,1vw,14px);white-space:nowrap" style-hover="filter:brightness(1.2)">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h2l2 5-2 1a11 11 0 006 6l1-2 5 2v2a2 2 0 01-2 2A16 16 0 013 5z"></path></svg>
-        <span data-phone-text>+91-90000 00000</span>
+        <span data-phone-text>+91-88845 88886</span>
       </a>
     </div>
     <nav data-desktop-nav style="display:flex;align-items:center;gap:clamp(12px,1.7vw,28px);flex-wrap:wrap;margin-left:auto;font-family:'Poppins',sans-serif;font-size:clamp(12.5px,1.05vw,15px);font-weight:700">
@@ -173,40 +173,59 @@
 
       <div data-hero-spacer style="height:34cqw" aria-hidden="true"></div>
 
-      <form data-hero-form onSubmit="{{ noop }}" style="position:relative;z-index:2;margin:0 0 0 2cqw;max-width:63cqw;background:#fff;border-radius:18px;box-shadow:0 10px 30px rgba(20,20,20,0.12);padding:14px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+      <form data-hero-form onSubmit="{{ sendBooking }}" style="position:relative;z-index:2;margin:0 0 0 2cqw;max-width:63cqw;background:#fff;border-radius:18px;box-shadow:0 10px 30px rgba(20,20,20,0.12);padding:14px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
         <label style="flex:1 1 170px;display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid #e7e9ec;border-radius:10px;min-width:150px;background:#fff">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4B4F55" stroke-width="1.8" style="flex-shrink:0"><path d="M3 12h4l3-8 4 16 3-8h4"></path></svg>
-          <select style="border:none;outline:none;font-size:14.5px;font-family:'Inter',sans-serif;color:#17181A;width:100%;background:transparent;appearance:none">
+          <select required onChange="{{ setVehicle }}" style="border:none;outline:none;font-size:14.5px;font-family:'Inter',sans-serif;color:#17181A;width:100%;background:transparent;appearance:none">
             <option value="" selected disabled hidden>Vehicle Type</option>
-            <option>Sedan</option>
-            <option>SUV</option>
-            <option>Tempo Traveller</option>
-            <option>Mini Bus</option>
+            <option>Dzire AC</option>
+            <option>Swift AC</option>
+            <option>Maruti WagonR AC</option>
+            <option>Toyota Etios AC</option>
+            <option>Ertiga SUV</option>
+            <option>Toyota Innova AC</option>
+            <option>Toyota Innova Crysta AC</option>
+            <option>Innova Crysta Hycross AC</option>
+            <option>Tempo Traveller Non AC</option>
+            <option>Tempo Traveller AC</option>
+            <option>Maharaja Tempo Traveller A/C</option>
+            <option>Force Urbania 9+1</option>
+            <option>Force Urbania 16+1</option>
+            <option>Mini Bus Non/AC 21+1</option>
+            <option>Mini Bus AC 21+1</option>
+            <option>Mini Bus Non/AC 25+1</option>
+            <option>Mini Bus AC 25+1</option>
+            <option>Bus Non/AC 33+1</option>
+            <option>Bus A/C 33+1</option>
+            <option>Bus Non/AC 49+1</option>
+            <option>Bus A/C 49+1</option>
+            <option>Other</option>
           </select>
         </label>
         <label style="flex:1 1 170px;display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid #e7e9ec;border-radius:10px;min-width:150px;background:#fff">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4B4F55" stroke-width="1.8" style="flex-shrink:0"><path d="M3 20l4-14h10l4 14M3 20h18M7 14h10"></path></svg>
-          <select style="border:none;outline:none;font-size:14.5px;font-family:'Inter',sans-serif;color:#17181A;width:100%;background:transparent;appearance:none">
+          <select required onChange="{{ setTripType }}" style="border:none;outline:none;font-size:14.5px;font-family:'Inter',sans-serif;color:#17181A;width:100%;background:transparent;appearance:none">
             <option value="" selected disabled hidden>Trip Type</option>
             <option>Outstation</option>
             <option>Local</option>
             <option>Airport</option>
             <option>Corporate</option>
+            <option>Other</option>
           </select>
         </label>
         <label style="flex:1 1 170px;display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid #e7e9ec;border-radius:10px;min-width:150px;background:#fff">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4B4F55" stroke-width="1.8" style="flex-shrink:0"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M3 9h18M8 2v4M16 2v4"></path></svg>
-          <input type="date" style="border:none;outline:none;font-size:14.5px;font-family:'Inter',sans-serif;color:#17181A;width:100%;background:transparent">
+          <input type="date" onChange="{{ setDate }}" style="border:none;outline:none;font-size:14.5px;font-family:'Inter',sans-serif;color:#17181A;width:100%;background:transparent">
         </label>
         <label style="flex:1 1 170px;display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid #e7e9ec;border-radius:10px;min-width:150px;background:#fff">
           <svg width="18" height="20" viewBox="0 0 24 24" fill="none" stroke="#4B4F55" stroke-width="1.8" style="flex-shrink:0"><rect x="6" y="2" width="12" height="20" rx="2"></rect><path d="M10 18h4"></path></svg>
-          <input type="tel" placeholder="Mobile Number" style="border:none;outline:none;font-size:14.5px;font-family:'Inter',sans-serif;color:#17181A;width:100%;background:transparent">
+          <input type="tel" required placeholder="Mobile Number" onChange="{{ setMobile }}" style="border:none;outline:none;font-size:14.5px;font-family:'Inter',sans-serif;color:#17181A;width:100%;background:transparent">
         </label>
         <button type="submit" style="flex:0 0 auto;padding:14px 30px;border-radius:10px;background:linear-gradient(135deg,#163E6E,#2E86D6);color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.02em;box-shadow:0 8px 18px rgba(22,62,110,0.35)" style-hover="filter:brightness(1.08)">Book Now</button>
       </form>
 
       <div style="text-align:center;margin-top:20px">
-        <a href="tel:+919000000000" style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:30px;border:1px solid #d7e9db;color:#14602F;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;background:#fff;box-shadow:0 6px 20px rgba(20,20,20,0.10)" style-hover="transform:translateY(-2px)">
+        <a href="tel:+918884588886" style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:30px;border:1px solid #d7e9db;color:#14602F;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;background:#fff;box-shadow:0 6px 20px rgba(20,20,20,0.10)" style-hover="transform:translateY(-2px)">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14602F" stroke-width="2"><path d="M3 5a2 2 0 012-2h2l2 5-2 1a11 11 0 006 6l1-2 5 2v2a2 2 0 01-2 2A16 16 0 013 5z"></path></svg>
           Instant Help
         </a>
@@ -226,7 +245,7 @@
       <div style="position:relative;border-radius:12px;overflow:hidden;border:1px solid #ecd9bd;box-shadow:0 6px 20px rgba(20,20,20,0.10);padding-bottom:10px;cursor:pointer" style-hover="transform:translateY(-3px);box-shadow:0 14px 26px rgba(20,20,20,0.18)">
         <a href="#fleet" style="display:block"><img src="images/our-fleet.png" alt="Our fleet of vehicles" style="width:100%;height:auto;display:block"></a>
         <div style="display:flex;gap:8px;padding:10px 10px 0">
-          <a href="tel:+919000000000" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 6px;border-radius:8px;background:linear-gradient(135deg,#f3d9a8,#e7b263);color:#3b2c14;font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:600;border:1px solid #d9ad63">
+          <a href="tel:+918884588886" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 6px;border-radius:8px;background:linear-gradient(135deg,#f3d9a8,#e7b263);color:#3b2c14;font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:600;border:1px solid #d9ad63">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h2l2 5-2 1a11 11 0 006 6l1-2 5 2v2a2 2 0 01-2 2A16 16 0 013 5z"></path></svg>
             Phone
           </a>
@@ -272,8 +291,8 @@
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M3 7l3-4h12l3 4"></path></svg>{{ v.type }}
         </div>
         <div style="display:flex;gap:8px;margin-top:auto">
-          <a href="#book" style="flex:1;text-align:center;padding:10px 8px;border-radius:9px;font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:600;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;box-shadow:0 8px 16px rgba(224,87,10,0.28)" style-hover="transform:translateY(-2px)">Book Online</a>
-          <a href="https://wa.me/919000000000" target="_blank" rel="noopener" style="flex:1;padding:10px 8px;border-radius:9px;font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:600;background:#1E8449;color:#fff;display:flex;align-items:center;justify-content:center;gap:6px" style-hover="transform:translateY(-2px)">
+          <a href="Satya%20Tourists%20Contact.dc.html" style="flex:1;text-align:center;padding:10px 8px;border-radius:9px;font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:600;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;box-shadow:0 8px 16px rgba(224,87,10,0.28)" style-hover="transform:translateY(-2px)">Book Online</a>
+          <a href="https://wa.me/918884588886" target="_blank" rel="noopener" style="flex:1;padding:10px 8px;border-radius:9px;font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:600;background:#1E8449;color:#fff;display:flex;align-items:center;justify-content:center;gap:6px" style-hover="transform:translateY(-2px)">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.06L2 22l5.1-1.34A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.3 1.18-1.78 1.24-.46.06-.92.1-1.94-.24-3.36-1.34-5.56-4.6-5.72-4.82-.16-.22-1.34-1.78-1.34-3.4 0-1.62.84-2.4 1.14-2.72.3-.32.66-.4.88-.4h.62c.2 0 .48-.02.7.54.24.6.82 2.06.9 2.2.08.14.14.32.02.5-.12.2-.2.32-.36.5-.16.18-.34.4-.48.54-.16.16-.34.34-.16.66.18.32.82 1.36 1.76 2.2 1.2 1.08 2.22 1.42 2.56 1.58.34.16.54.14.74-.08.2-.22.86-1 1.1-1.34.24-.34.48-.28.8-.16.32.12 2.02.96 2.36 1.14.34.18.56.26.64.4.08.14.08.82-.14 1.44z"></path></svg>
             WhatsApp
           </a>
@@ -293,12 +312,12 @@
     <p style="color:#c7cad0;font-size:15px;max-width:640px;margin:0 auto 26px">We help every passenger reach their destination on time, for a hassle-free journey — including pick-up and drop services to the airport.</p>
     <div style="display:inline-flex;align-items:center;gap:10px;color:#fff;font-size:clamp(17px,1.8vw,20px);font-weight:600;margin-bottom:24px">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F4711E" stroke-width="2"><path d="M3 5a2 2 0 012-2h2l2 5-2 1a11 11 0 006 6l1-2 5 2v2a2 2 0 01-2 2A16 16 0 013 5z"></path></svg>
-      Call Now <a href="tel:+919000000000" style="color:#fff">+91-90000 00000</a>
+      Call Now <a href="tel:+918884588886" style="color:#fff">+91-88845 88886</a>
     </div>
     <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
-      <a href="#book" style="padding:12px 26px;border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-weight:600;font-size:14.5px;box-shadow:0 8px 18px rgba(224,87,10,0.3)" style-hover="transform:translateY(-2px)">Airport Taxi</a>
-      <a href="#book" style="padding:12px 26px;border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-weight:600;font-size:14.5px;box-shadow:0 8px 18px rgba(224,87,10,0.3)" style-hover="transform:translateY(-2px)">Outstation Taxi</a>
-      <a href="#book" style="padding:12px 26px;border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-weight:600;font-size:14.5px;box-shadow:0 8px 18px rgba(224,87,10,0.3)" style-hover="transform:translateY(-2px)">Local Taxi</a>
+      <a href="Satya%20Tourists%20Contact.dc.html" style="padding:12px 26px;border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-weight:600;font-size:14.5px;box-shadow:0 8px 18px rgba(224,87,10,0.3)" style-hover="transform:translateY(-2px)">Airport Taxi</a>
+      <a href="Satya%20Tourists%20Contact.dc.html" style="padding:12px 26px;border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-weight:600;font-size:14.5px;box-shadow:0 8px 18px rgba(224,87,10,0.3)" style-hover="transform:translateY(-2px)">Outstation Taxi</a>
+      <a href="Satya%20Tourists%20Contact.dc.html" style="padding:12px 26px;border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-weight:600;font-size:14.5px;box-shadow:0 8px 18px rgba(224,87,10,0.3)" style-hover="transform:translateY(-2px)">Local Taxi</a>
     </div>
   </div>
 
@@ -335,7 +354,7 @@
         <h2 style="font-family:'Poppins',sans-serif;font-size:clamp(24px,3vw,32px);font-weight:800;color:#17181A;margin-bottom:18px;line-height:1.25">{{ row.h2 }}</h2>
         <h3 style="font-family:'Poppins',sans-serif;font-size:clamp(18px,2vw,22px);font-weight:600;color:#17181A;margin-bottom:16px">{{ row.h3 }}</h3>
         <p style="color:#4B4F55;font-size:15px;line-height:1.7;margin-bottom:24px">{{ row.body }}</p>
-        <a href="#book" style="display:inline-block;padding:12px 28px;border-radius:8px;font-family:'Poppins',sans-serif;font-weight:600;font-size:13.5px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;box-shadow:0 8px 16px rgba(224,87,10,0.28)" style-hover="transform:translateY(-2px)">Book Online</a>
+        <a href="Satya%20Tourists%20Contact.dc.html" style="display:inline-block;padding:12px 28px;border-radius:8px;font-family:'Poppins',sans-serif;font-weight:600;font-size:13.5px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;box-shadow:0 8px 16px rgba(224,87,10,0.28)" style-hover="transform:translateY(-2px)">Book Online</a>
       </div>
       <div data-service-row-img>
         <img src="{{ row.img }}" alt="{{ row.h2 }}" style="width:100%;border-radius:14px;box-shadow:0 14px 34px rgba(20,30,50,0.14)">
@@ -365,7 +384,7 @@
           <dl style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:14px">
             <dt style="font-weight:700;color:#17181A">Starting</dt><dd style="color:#4B4F55">{{ s.price }}</dd>
           </dl>
-          <a href="#book" style="margin-top:auto;text-align:center;padding:10px;border-radius:9px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:14px" style-hover="transform:translateY(-2px)">Know More</a>
+          <a href="Satya%20Tourists%20Contact.dc.html" style="margin-top:auto;text-align:center;padding:10px;border-radius:9px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:14px" style-hover="transform:translateY(-2px)">Know More</a>
         </div>
       </div>
     </sc-for>
@@ -415,7 +434,7 @@
     <h2 style="font-family:'Poppins',sans-serif;font-size:clamp(24px,3vw,32px);font-weight:800;color:#17181A;margin-bottom:18px;line-height:1.25">The Best Cab Services in Bengaluru</h2>
     <p style="color:#4B4F55;font-size:15px;line-height:1.7;margin-bottom:24px">Satya Tourists is a leading cab service provider in Bengaluru, serving customers from all over the country for over 7 years. We have well-experienced drivers, 24/7 customer care support, regular vehicle inspection, and a huge range of vehicle options to suit every requirement and comfort.</p>
     <p style="color:#4B4F55;font-size:15px;line-height:1.7;margin-bottom:24px">We're confident that we offer the best and most secure cab service in Bengaluru. We take great pride in providing our customers with an efficient and reliable cab service.</p>
-    <a href="#book" style="display:inline-block;padding:12px 28px;border-radius:8px;font-family:'Poppins',sans-serif;font-weight:600;font-size:13.5px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;box-shadow:0 8px 16px rgba(224,87,10,0.28)" style-hover="transform:translateY(-2px)">Book Online</a>
+    <a href="Satya%20Tourists%20Contact.dc.html" style="display:inline-block;padding:12px 28px;border-radius:8px;font-family:'Poppins',sans-serif;font-weight:600;font-size:13.5px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;box-shadow:0 8px 16px rgba(224,87,10,0.28)" style-hover="transform:translateY(-2px)">Book Online</a>
   </div>
   <div>
     <img src="images/airport.png" alt="Professional Satya Tourists cab service at the airport" style="width:100%;border-radius:14px;box-shadow:0 14px 34px rgba(20,30,50,0.14)">
@@ -428,12 +447,12 @@
     <p style="color:#c7cad0;font-size:15.5px;line-height:1.7;max-width:760px;margin:0 auto 26px">We are committed to offering differentiated travel services focused on adding value to our customers and travel partners. We always intend to have the most satisfied customers, and the numbers keep growing daily.</p>
     <div style="display:inline-flex;align-items:center;gap:10px;color:#fff;font-size:clamp(17px,1.8vw,20px);font-weight:600;margin-bottom:22px">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F4711E" stroke-width="2"><path d="M3 5a2 2 0 012-2h2l2 5-2 1a11 11 0 006 6l1-2 5 2v2a2 2 0 01-2 2A16 16 0 013 5z"></path></svg>
-      Call Now <a href="tel:+919000000000" style="color:#fff">+91-90000 00000</a>
+      Call Now <a href="tel:+918884588886" style="color:#fff">+91-88845 88886</a>
     </div>
     <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
-      <a href="#book" style="padding:12px 26px;border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-weight:600;font-size:14.5px;box-shadow:0 8px 18px rgba(224,87,10,0.3)" style-hover="transform:translateY(-2px)">Airport Taxi</a>
-      <a href="#book" style="padding:12px 26px;border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-weight:600;font-size:14.5px;box-shadow:0 8px 18px rgba(224,87,10,0.3)" style-hover="transform:translateY(-2px)">Outstation Taxi</a>
-      <a href="#book" style="padding:12px 26px;border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-weight:600;font-size:14.5px;box-shadow:0 8px 18px rgba(224,87,10,0.3)" style-hover="transform:translateY(-2px)">Local Taxi</a>
+      <a href="Satya%20Tourists%20Contact.dc.html" style="padding:12px 26px;border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-weight:600;font-size:14.5px;box-shadow:0 8px 18px rgba(224,87,10,0.3)" style-hover="transform:translateY(-2px)">Airport Taxi</a>
+      <a href="Satya%20Tourists%20Contact.dc.html" style="padding:12px 26px;border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-weight:600;font-size:14.5px;box-shadow:0 8px 18px rgba(224,87,10,0.3)" style-hover="transform:translateY(-2px)">Outstation Taxi</a>
+      <a href="Satya%20Tourists%20Contact.dc.html" style="padding:12px 26px;border-radius:8px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-weight:600;font-size:14.5px;box-shadow:0 8px 18px rgba(224,87,10,0.3)" style-hover="transform:translateY(-2px)">Local Taxi</a>
     </div>
   </div>
 </section>
@@ -449,11 +468,11 @@
       </div>
       <p style="font-size:14px;line-height:1.75;color:#9ba0a9;max-width:320px">Outstation, airport, local and corporate travel across Bengaluru and South India &mdash; verified drivers, inspected vehicles, and fares agreed up front.</p>
       <div style="display:flex;flex-wrap:wrap;gap:10px">
-        <a href="tel:+919000000000" style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:9px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;box-shadow:0 8px 18px rgba(224,87,10,0.28)" style-hover="transform:translateY(-2px)">
+        <a href="tel:+918884588886" style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:9px;background:linear-gradient(135deg,#F4711E,#E0570A);color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;box-shadow:0 8px 18px rgba(224,87,10,0.28)" style-hover="transform:translateY(-2px)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h2l2 5-2 1a11 11 0 006 6l1-2 5 2v2a2 2 0 01-2 2A16 16 0 013 5z"></path></svg>
           Call Now
         </a>
-        <a href="https://wa.me/919000000000" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:9px;background:#1E8449;color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:13px" style-hover="transform:translateY(-2px)">
+        <a href="https://wa.me/918884588886" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:9px;background:#1E8449;color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:13px" style-hover="transform:translateY(-2px)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.06L2 22l5.1-1.34A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.3 1.18-1.78 1.24-.46.06-.92.1-1.94-.24-3.36-1.34-5.56-4.6-5.72-4.82-.16-.22-1.34-1.78-1.34-3.4 0-1.62.84-2.4 1.14-2.72.3-.32.66-.4.88-.4h.62c.2 0 .48-.02.7.54.24.6.82 2.06.9 2.2.08.14.14.32.02.5-.12.2-.2.32-.36.5-.16.18-.34.4-.48.54-.16.16-.34.34-.16.66.18.32.82 1.36 1.76 2.2 1.2 1.08 2.22 1.42 2.56 1.58.34.16.54.14.74-.08.2-.22.86-1 1.1-1.34.24-.34.48-.28.8-.16.32.12 2.02.96 2.36 1.14.34.18.56.26.64.4.08.14.08.82-.14 1.44z"></path></svg>
           WhatsApp
         </a>
@@ -486,9 +505,9 @@
 
     <div style="display:flex;flex-direction:column;gap:14px">
       <h3 style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:#fff;letter-spacing:0.02em">Reach us</h3>
-      <a href="tel:+919000000000" style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#fff;font-weight:600" style-hover="color:#F4711E">
+      <a href="tel:+918884588886" style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#fff;font-weight:600" style-hover="color:#F4711E">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F4711E" stroke-width="2" style="flex-shrink:0;margin-top:2px"><path d="M3 5a2 2 0 012-2h2l2 5-2 1a11 11 0 006 6l1-2 5 2v2a2 2 0 01-2 2A16 16 0 013 5z"></path></svg>
-        +91-90000 00000
+        +91-88845 88886
       </a>
       <a href="mailto:info@satyatourists.in" style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#fff;font-weight:600" style-hover="color:#F4711E">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F4711E" stroke-width="2" style="flex-shrink:0;margin-top:2px"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
@@ -519,7 +538,7 @@
 </footer>
 
 
-<a href="https://wa.me/919000000000" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" style="position:fixed;left:20px;bottom:20px;z-index:60;width:56px;height:56px;border-radius:50%;background:#1E8449;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(20,20,20,0.25)" style-hover="transform:translateY(-3px)">
+<a href="https://wa.me/918884588886" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" style="position:fixed;left:20px;bottom:20px;z-index:60;width:56px;height:56px;border-radius:50%;background:#1E8449;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(20,20,20,0.25)" style-hover="transform:translateY(-3px)">
   <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.06L2 22l5.1-1.34A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.3 1.18-1.78 1.24-.46.06-.92.1-1.94-.24-3.36-1.34-5.56-4.6-5.72-4.82-.16-.22-1.34-1.78-1.34-3.4 0-1.62.84-2.4 1.14-2.72.3-.32.66-.4.88-.4h.62c.2 0 .48-.02.7.54.24.6.82 2.06.9 2.2.08.14.14.32.02.5-.12.2-.2.32-.36.5-.16.18-.34.4-.48.54-.16.16-.34.34-.16.66.18.32.82 1.36 1.76 2.2 1.2 1.08 2.22 1.42 2.56 1.58.34.16.54.14.74-.08.2-.22.86-1 1.1-1.34.24-.34.48-.28.8-.16.32.12 2.02.96 2.36 1.14.34.18.56.26.64.4.08.14.08.82-.14 1.44z"></path></svg>
 </a>
 
@@ -527,7 +546,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { navOpen: false };
+  state = { navOpen: false, bookVehicle: "", bookTripType: "", bookDate: "", bookMobile: "" };
   renderVals() {
     const R = "\u20B9";
     const FLEET_PHOTOS = { sedan: "images/fleet/dzire.png", suv: "images/fleet/eartiga.png", van: "images/fleet/Tempo%20Traveller%20Non%20AC.png", mpv: "images/fleet/innova.jpeg", bus: "images/fleet/Mini%20Bus%20%2021+1.jpeg" };
@@ -576,6 +595,23 @@ class Component extends DCLogic {
       navOpen: this.state.navOpen,
       toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
       noop: (e) => e.preventDefault(),
+      setVehicle: (e) => this.setState({ bookVehicle: e.target.value }),
+      setTripType: (e) => this.setState({ bookTripType: e.target.value }),
+      setDate: (e) => this.setState({ bookDate: e.target.value }),
+      setMobile: (e) => this.setState({ bookMobile: e.target.value }),
+      sendBooking: (e) => {
+        e.preventDefault();
+        const s = this.state;
+        const lines = [
+          "New booking request from the website:",
+          "Vehicle type: " + (s.bookVehicle || "-"),
+          "Trip type: " + (s.bookTripType || "-"),
+          "Travel date: " + (s.bookDate || "-"),
+          "Mobile: " + (s.bookMobile || "-")
+        ];
+        const url = "https://wa.me/918884588886?text=" + encodeURIComponent(lines.join("\n"));
+        window.open(url, "_blank");
+      },
       tabs: [
         { title: "Outstation", src: "images/tab-outstation.png", href: "Satya%20Tourists%20Outstation.dc.html" },
         { title: "Local & Drop", src: "images/tab-local-drop.png", href: "Satya%20Tourists%20Local%20Taxi.dc.html" },
