@@ -363,7 +363,7 @@ class Component extends DCLogic {
   state = { navOpen: false };
   renderVals() {
     const R = "\u20B9";
-    const FLEET_PHOTOS = { sedan: "images/fleet/dzire.png", suv: "images/fleet/eartiga.png", van: "images/fleet/Tempo%20Traveller%20Non%20AC.png", mpv: "images/fleet/innova.jpeg", bus: "images/fleet/Mini%20Bus%20%2021+1.jpeg" };
+    const FLEET_PHOTOS = { sedan: "images/fleet/dzire.png", suv: "images/fleet/eartiga.png", van: "images/fleet/Tempo%20Traveller%20Non%20AC.png", mpv: "images/fleet/innova.jpeg", bus: "images/fleet/Mini%20Bus%20%2021+1%20AC.jpeg" };
     const NAME_PHOTOS = {
       "Dzire AC": "images/fleet/dzire.png",
       "Swift AC": "images/fleet/swift.png",
@@ -377,14 +377,14 @@ class Component extends DCLogic {
       "Maharaja Tempo Traveller A/C": "images/fleet/Maharaja%20Tempo%20Traveller.png",
       "Force Urbania 9+1": "images/fleet/Force%20Urbania%209+1.png",
       "Force Urbania 16+1": "images/fleet/Force%20Urbania%2016+1.png",
-      "Mini Bus Non/AC 21+1": "images/fleet/Mini%20Bus%20%2021+1.jpeg",
-      "Mini Bus AC 21+1": "images/fleet/Mini%20Bus%20%2021+1.jpeg",
-      "Mini Bus Non/AC 25+1": "images/fleet/Mini%20Bus%20%2025+1.png",
-      "Mini Bus AC 25+1": "images/fleet/Mini%20Bus%20%2025+1.png",
-      "Bus Non/AC 33+1": "images/fleet/Bus%20%2033+1.png",
-      "Bus A/C 33+1": "images/fleet/Bus%20%2033+1.png",
-      "Bus Non/AC 49+1": "images/fleet/Bus%2049+1.png",
-      "Bus A/C 49+1": "images/fleet/Bus%2049+1.png"
+      "Mini Bus Non/AC 21+1": "images/fleet/Mini%20Bus%20%2021+1%20NonAC.png",
+      "Mini Bus AC 21+1": "images/fleet/Mini%20Bus%20%2021+1%20AC.jpeg",
+      "Mini Bus Non/AC 25+1": "images/fleet/Mini%20Bus%20%2025+1%20Non%20AC.png",
+      "Mini Bus AC 25+1": "images/fleet/Mini%20Bus%20%2025+1%20AC.png",
+      "Bus Non/AC 33+1": "images/fleet/Bus%20%2033+1%20NonAC.png",
+      "Bus A/C 33+1": "images/fleet/Bus%20%2033+1%20AC.png",
+      "Bus Non/AC 49+1": "images/fleet/Bus%2049+1%20NonAC.png",
+      "Bus A/C 49+1": "images/fleet/Bus%2049+1%20AC.png"
     };
     const f = (name, type, icon, tariff, bata, seats) => {
       const photo = NAME_PHOTOS[name] || FLEET_PHOTOS[icon] || "";

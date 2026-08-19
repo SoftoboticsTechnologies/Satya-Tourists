@@ -549,7 +549,7 @@ class Component extends DCLogic {
   state = { navOpen: false, bookVehicle: "", bookTripType: "", bookDate: "", bookMobile: "" };
   renderVals() {
     const R = "\u20B9";
-    const FLEET_PHOTOS = { sedan: "images/fleet/dzire.png", suv: "images/fleet/eartiga.png", van: "images/fleet/Tempo%20Traveller%20Non%20AC.png", mpv: "images/fleet/innova.jpeg", bus: "images/fleet/Mini%20Bus%20%2021+1.jpeg" };
+    const FLEET_PHOTOS = { sedan: "images/fleet/dzire.png", suv: "images/fleet/eartiga.png", van: "images/fleet/Tempo%20Traveller%20Non%20AC.png", mpv: "images/fleet/innova.jpeg", bus: "images/fleet/Mini%20Bus%20%2021+1%20AC.jpeg" };
     const NAME_PHOTOS = {
       "Dzire AC": "images/fleet/dzire.png",
       "Swift AC": "images/fleet/swift.png",
@@ -567,20 +567,20 @@ class Component extends DCLogic {
       "Force Urbania 9+1": "images/fleet/Force%20Urbania%209+1.png",
       "Force Urbania 16+1": "images/fleet/Force%20Urbania%2016+1.png",
       "Force Urbania Rentals": "images/fleet/Force%20Urbania%209+1.png",
-      "Mini Bus Non/AC 21+1": "images/fleet/Mini%20Bus%20%2021+1.jpeg",
-      "Mini Bus AC 21+1": "images/fleet/Mini%20Bus%20%2021+1.jpeg",
-      "20 Seater Mini Bus Rentals": "images/fleet/Mini%20Bus%20%2021+1.jpeg",
-      "Mini Bus Non/AC 25+1": "images/fleet/Mini%20Bus%20%2025+1.png",
-      "Mini Bus AC 25+1": "images/fleet/Mini%20Bus%20%2025+1.png",
-      "25 Seater Mini Bus Rentals": "images/fleet/Mini%20Bus%20%2025+1.png",
-      "Bus Non/AC 33+1": "images/fleet/Bus%20%2033+1.png",
-      "Bus A/C 33+1": "images/fleet/Bus%20%2033+1.png",
-      "33 Seater Mini Bus Rentals": "images/fleet/Bus%20%2033+1.png",
-      "Bus Non/AC 49+1": "images/fleet/Bus%2049+1.png",
-      "Bus A/C 49+1": "images/fleet/Bus%2049+1.png",
-      "40 Seater Mini Bus Rentals": "images/fleet/Bus%2049+1.png",
-      "45 Seater Mini Bus Rentals": "images/fleet/Bus%2049+1.png",
-      "50 Seater Mini Bus Rentals": "images/fleet/Bus%2049+1.png"
+      "Mini Bus Non/AC 21+1": "images/fleet/Mini%20Bus%20%2021+1%20NonAC.png",
+      "Mini Bus AC 21+1": "images/fleet/Mini%20Bus%20%2021+1%20AC.jpeg",
+      "20 Seater Mini Bus Rentals": "images/fleet/Mini%20Bus%20%2021+1%20AC.jpeg",
+      "Mini Bus Non/AC 25+1": "images/fleet/Mini%20Bus%20%2025+1%20Non%20AC.png",
+      "Mini Bus AC 25+1": "images/fleet/Mini%20Bus%20%2025+1%20AC.png",
+      "25 Seater Mini Bus Rentals": "images/fleet/Mini%20Bus%20%2025+1%20AC.png",
+      "Bus Non/AC 33+1": "images/fleet/Bus%20%2033+1%20NonAC.png",
+      "Bus A/C 33+1": "images/fleet/Bus%20%2033+1%20AC.png",
+      "33 Seater Mini Bus Rentals": "images/fleet/Bus%20%2033+1%20AC.png",
+      "Bus Non/AC 49+1": "images/fleet/Bus%2049+1%20NonAC.png",
+      "Bus A/C 49+1": "images/fleet/Bus%2049+1%20AC.png",
+      "40 Seater Mini Bus Rentals": "images/fleet/Bus%2049+1%20AC.png",
+      "45 Seater Mini Bus Rentals": "images/fleet/Bus%2049+1%20AC.png",
+      "50 Seater Mini Bus Rentals": "images/fleet/Bus%2049+1%20AC.png"
     };
     const f = (name, type, icon, tariff, bata, seats) => {
       const photo = NAME_PHOTOS[name] || FLEET_PHOTOS[icon] || "";
@@ -657,7 +657,7 @@ class Component extends DCLogic {
       serviceRows: [
         { id: "corporate", h2: "Innova Crysta Outstation Rentals", h3: "Welcome to Unmatched Travel with Innova Crysta Rentals in Bengaluru", body: "Embark on your next adventure with Innova Crysta rentals from Satya Tourists — the ultimate choice for comfort, style, and reliability. Whether it's a family vacation, a corporate trip, or a group getaway, our Innova Crysta rentals ensure every mile is a memory. Book today and experience travel like never before!", img: "images/fleet/crysta.png" },
         { id: "tempo", h2: "Tempo Traveller Outstation Rentals", h3: "Discover Comfort, Safety, and Style!", body: "Planning a group trip out of Bengaluru and looking for a reliable, comfortable way to travel? Look no further! Satya Tourists' Tempo Traveller rentals give you a fleet of well-maintained, modern, and fully equipped vehicles for all your travel needs.", img: "images/fleet/Tempo%20Traveller%20AC.png" },
-        { id: "minibus", h2: "Mini Bus Outstation Rentals", h3: "Mini bus rental in Bengaluru at the lowest fares", body: "Travel in unmatched comfort with Satya Tourists' Mini Bus rentals. Make your journeys memorable, whether you're exploring the beauty of Bengaluru or embarking on an exciting outstation adventure. Book your Mini Bus rental now!", img: "images/fleet/Mini%20Bus%20%2025+1.png" },
+        { id: "minibus", h2: "Mini Bus Outstation Rentals", h3: "Mini bus rental in Bengaluru at the lowest fares", body: "Travel in unmatched comfort with Satya Tourists' Mini Bus rentals. Make your journeys memorable, whether you're exploring the beauty of Bengaluru or embarking on an exciting outstation adventure. Book your Mini Bus rental now!", img: "images/fleet/Mini%20Bus%20%2025+1%20AC.png" },
         { id: "local", h2: "Innova Taxi Rentals", h3: "Comfort, Space & Style for Every Ride", body: "Looking for a premium travel experience that's smooth, safe, and effortlessly comfortable? Satya Tourists' Innova Taxi Service is designed for families, corporate travelers, tourists, and groups who want more space, better legroom, powerful performance, and a hassle-free journey every time.", img: "images/fleet/hycross.png" }
       ],
       showcase: [
