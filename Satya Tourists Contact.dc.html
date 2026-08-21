@@ -157,7 +157,13 @@
       <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:#4B4F55">Trip details
         <textarea rows="4" placeholder="Pick-up point, destination, number of passengers" onChange="{{ setDetails }}" style="border:1px solid #e7e9ec;border-radius:10px;padding:12px 14px;font-size:14.5px;font-family:'Inter',sans-serif;color:#17181A;outline:none;resize:vertical" style-focus="border-color:#1E8449"></textarea>
       </label>
-      <button type="submit" style="align-self:flex-start;padding:14px 30px;border-radius:10px;background:#1E8449;color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;box-shadow:0 8px 18px rgba(30,132,73,0.3)" style-hover="transform:translateY(-2px);background:#186b3a">Send Enquiry</button>
+      <button type="submit" disabled="{{ formSending }}" style="align-self:flex-start;padding:14px 30px;border-radius:10px;background:#1E8449;color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;box-shadow:0 8px 18px rgba(30,132,73,0.3)" style-hover="transform:translateY(-2px);background:#186b3a">{{ sendButtonLabel }}</button>
+      <sc-if value="{{ formSent }}" hint-placeholder-val="{{ false }}">
+        <p style="font-size:13.5px;font-weight:600;color:#1E8449">Thanks! Your enquiry has been emailed to our booking desk &mdash; we'll be in touch shortly.</p>
+      </sc-if>
+      <sc-if value="{{ formError }}" hint-placeholder-val="{{ false }}">
+        <p style="font-size:13.5px;font-weight:600;color:#c0392b">Something went wrong sending your enquiry. Please call or WhatsApp us instead.</p>
+      </sc-if>
     </form>
 
     <aside style="flex:1 1 min(100%,300px);display:flex;flex-direction:column;gap:16px">
@@ -311,7 +317,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { navOpen: false, formName: "", formMobile: "", formVehicle: "", formTripType: "Outstation", formDate: "", formDetails: "" };
+  state = { navOpen: false, formName: "", formMobile: "", formVehicle: "", formTripType: "Outstation", formDate: "", formDetails: "", formStatus: "idle" };
 
   renderVals() {
     return {
@@ -323,20 +329,34 @@ class Component extends DCLogic {
       setTripType: (e) => this.setState({ formTripType: e.target.value }),
       setDate: (e) => this.setState({ formDate: e.target.value }),
       setDetails: (e) => this.setState({ formDetails: e.target.value }),
+      formSending: this.state.formStatus === "sending",
+      formSent: this.state.formStatus === "sent",
+      formError: this.state.formStatus === "error",
+      sendButtonLabel: this.state.formStatus === "sending" ? "Sending..." : "Send Enquiry",
       sendEnquiry: (e) => {
         e.preventDefault();
         const s = this.state;
-        const lines = [
-          "New enquiry from the website:",
-          "Name: " + (s.formName || "-"),
-          "Mobile: " + (s.formMobile || "-"),
-          "Vehicle: " + (s.formVehicle || "-"),
-          "Trip type: " + s.formTripType,
-          "Travel date: " + (s.formDate || "-"),
-          "Details: " + (s.formDetails || "-")
-        ];
-        const url = "https://wa.me/918884588886?text=" + encodeURIComponent(lines.join("\n"));
-        window.open(url, "_blank");
+        this.setState({ formStatus: "sending" });
+        fetch("https://k5iewetbri.execute-api.ap-south-1.amazonaws.com/prod/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            firstName: s.formName || "",
+            mobile: s.formMobile || "",
+            vehicle: s.formVehicle || "",
+            tripType: s.formTripType || "",
+            travelDate: s.formDate || "",
+            message: s.formDetails || ""
+          })
+        })
+          .then((res) => {
+            if (!res.ok) throw new Error("Request failed");
+            this.setState({
+              formStatus: "sent",
+              formName: "", formMobile: "", formVehicle: "", formTripType: "Outstation", formDate: "", formDetails: ""
+            });
+          })
+          .catch(() => this.setState({ formStatus: "error" }));
       },
 
       channels: [

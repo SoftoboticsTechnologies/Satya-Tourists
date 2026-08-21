@@ -221,8 +221,14 @@
           <svg width="18" height="20" viewBox="0 0 24 24" fill="none" stroke="#4B4F55" stroke-width="1.8" style="flex-shrink:0"><rect x="6" y="2" width="12" height="20" rx="2"></rect><path d="M10 18h4"></path></svg>
           <input type="tel" required placeholder="Mobile Number" onChange="{{ setMobile }}" style="border:none;outline:none;font-size:14.5px;font-family:'Inter',sans-serif;color:#17181A;width:100%;background:transparent">
         </label>
-        <button type="submit" style="flex:0 0 auto;padding:14px 30px;border-radius:10px;background:linear-gradient(135deg,#163E6E,#2E86D6);color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.02em;box-shadow:0 8px 18px rgba(22,62,110,0.35)" style-hover="filter:brightness(1.08)">Book Now</button>
+        <button type="submit" disabled="{{ bookSending }}" style="flex:0 0 auto;padding:14px 30px;border-radius:10px;background:linear-gradient(135deg,#163E6E,#2E86D6);color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.02em;box-shadow:0 8px 18px rgba(22,62,110,0.35)" style-hover="filter:brightness(1.08)">{{ bookButtonLabel }}</button>
       </form>
+      <sc-if value="{{ bookSent }}" hint-placeholder-val="{{ false }}">
+        <p style="text-align:center;margin-top:10px;font-size:13.5px;font-weight:600;color:#1E8449">Thanks! Your booking request has been emailed to our booking desk &mdash; we'll be in touch shortly.</p>
+      </sc-if>
+      <sc-if value="{{ bookError }}" hint-placeholder-val="{{ false }}">
+        <p style="text-align:center;margin-top:10px;font-size:13.5px;font-weight:600;color:#c0392b">Something went wrong sending your request. Please call or WhatsApp us instead.</p>
+      </sc-if>
 
       <div style="text-align:center;margin-top:20px">
         <a href="tel:+918884588886" style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:30px;border:1px solid #d7e9db;color:#14602F;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;background:#fff;box-shadow:0 6px 20px rgba(20,20,20,0.10)" style-hover="transform:translateY(-2px)">
@@ -546,7 +552,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { navOpen: false, bookVehicle: "", bookTripType: "", bookDate: "", bookMobile: "" };
+  state = { navOpen: false, bookVehicle: "", bookTripType: "", bookDate: "", bookMobile: "", bookStatus: "idle" };
   renderVals() {
     const R = "\u20B9";
     const FLEET_PHOTOS = { sedan: "images/fleet/dzire.png", suv: "images/fleet/eartiga.png", van: "images/fleet/Tempo%20Traveller%20Non%20AC.png", mpv: "images/fleet/innova.jpeg", bus: "images/fleet/Mini%20Bus%20%2021+1%20AC.jpeg" };
@@ -599,18 +605,30 @@ class Component extends DCLogic {
       setTripType: (e) => this.setState({ bookTripType: e.target.value }),
       setDate: (e) => this.setState({ bookDate: e.target.value }),
       setMobile: (e) => this.setState({ bookMobile: e.target.value }),
+      bookSending: this.state.bookStatus === "sending",
+      bookSent: this.state.bookStatus === "sent",
+      bookError: this.state.bookStatus === "error",
+      bookButtonLabel: this.state.bookStatus === "sending" ? "Sending..." : "Book Now",
       sendBooking: (e) => {
         e.preventDefault();
         const s = this.state;
-        const lines = [
-          "New booking request from the website:",
-          "Vehicle type: " + (s.bookVehicle || "-"),
-          "Trip type: " + (s.bookTripType || "-"),
-          "Travel date: " + (s.bookDate || "-"),
-          "Mobile: " + (s.bookMobile || "-")
-        ];
-        const url = "https://wa.me/918884588886?text=" + encodeURIComponent(lines.join("\n"));
-        window.open(url, "_blank");
+        this.setState({ bookStatus: "sending" });
+        fetch("https://k5iewetbri.execute-api.ap-south-1.amazonaws.com/prod/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            vehicle: s.bookVehicle || "",
+            tripType: s.bookTripType || "",
+            travelDate: s.bookDate || "",
+            mobile: s.bookMobile || "",
+            message: "New booking request from the website."
+          })
+        })
+          .then((res) => {
+            if (!res.ok) throw new Error("Request failed");
+            this.setState({ bookStatus: "sent", bookVehicle: "", bookTripType: "", bookDate: "", bookMobile: "" });
+          })
+          .catch(() => this.setState({ bookStatus: "error" }));
       },
       tabs: [
         { title: "Outstation", src: "images/tab-outstation.png", href: "Satya%20Tourists%20Outstation.dc.html" },
